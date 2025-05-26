@@ -53,8 +53,8 @@ namespace shopix.usercontrol
 
         public string Price
         {
-            get { return _description; }
-            set { _description = value; price.Text = value; }
+            get { return _price; }
+            set { _price = value; price.Text = value; }
         }
 
         // Quantity math
@@ -112,15 +112,35 @@ namespace shopix.usercontrol
 
         private void btnAddCart_Click(object sender, EventArgs e)
         {
-            pc.iName = _name;
-            pc.Price = _price;
 
-            panelcart i = (panelcart)sender;
 
-            pc.name.Text = i.iName;
-            pc.price.Text = i.Price;
+            // store to setter in panelcart
+            pc.name.Text = _name;
+            pc.price.Text = _price;
 
-            f.flowLayoutPanel2.Controls.Add();
+            panelcart[] a = new panelcart[1];
+
+
+            // store to array
+            //string[] Name = new string[1] { pc.name.Text };
+            //string[] price = new string[1] { pc.price.Text };
+
+            string[] Name = new string[1] {"a" };
+            string[] price = new string[1] { "c"};
+            string[] quantity = new string[1] { "v" };
+
+            // loop to flowlayout2
+            for (int c = 0; c < a.Length; c++)
+            {
+                //store control object on list array
+                a[c] = new panelcart();
+
+                a[c].iName = Name[c];
+                a[c].Price = price[c];
+
+                f.flowLayoutPanel2.Controls.Add(a[c]);
+            }
+
         }
     }
 }

@@ -40,10 +40,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.cartpanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
             this.button31 = new System.Windows.Forms.Button();
             this.button30 = new System.Windows.Forms.Button();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -54,8 +50,6 @@
             this.hopeForm2 = new ReaLTaiizor.Forms.HopeForm();
             this.panel1.SuspendLayout();
             this.cartpanel.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
@@ -190,48 +184,10 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.flowLayoutPanel2.Controls.Add(this.panel20);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 94);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(354, 537);
             this.flowLayoutPanel2.TabIndex = 11;
-            // 
-            // panel20
-            // 
-            this.panel20.Controls.Add(this.label32);
-            this.panel20.Controls.Add(this.label33);
-            this.panel20.Controls.Add(this.label34);
-            this.panel20.Location = new System.Drawing.Point(3, 3);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(348, 47);
-            this.panel20.TabIndex = 1;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(295, 15);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(37, 16);
-            this.label32.TabIndex = 2;
-            this.label32.Text = "price";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(111, 15);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(37, 16);
-            this.label33.TabIndex = 1;
-            this.label33.Text = "quan";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(3, 15);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(41, 16);
-            this.label34.TabIndex = 0;
-            this.label34.Text = "name";
             // 
             // button31
             // 
@@ -352,9 +308,6 @@
             this.panel1.ResumeLayout(false);
             this.cartpanel.ResumeLayout(false);
             this.cartpanel.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.panel20.ResumeLayout(false);
-            this.panel20.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
@@ -379,10 +332,6 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Button button30;
         private System.Windows.Forms.Button button31;
-        private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Panel mainpanel;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }

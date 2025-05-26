@@ -39,6 +39,8 @@ namespace shopix.usercontrol
             set { pcquantity = value; quantity.Text = value; }
         }
 
+        [Category("Custom Props")]
+
         public string Price
         {
             get { return pcprice; }
