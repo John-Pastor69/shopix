@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button17 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -44,7 +45,7 @@
             this.button30 = new System.Windows.Forms.Button();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
+            this.TotalLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.mainpanel = new System.Windows.Forms.Panel();
             this.hopeForm2 = new ReaLTaiizor.Forms.HopeForm();
@@ -164,7 +165,7 @@
             this.panel2.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.panel2.Location = new System.Drawing.Point(254, 58);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(730, 735);
+            this.panel2.Size = new System.Drawing.Size(744, 735);
             this.panel2.TabIndex = 7;
             // 
             // cartpanel
@@ -175,7 +176,7 @@
             this.cartpanel.Controls.Add(this.button30);
             this.cartpanel.Controls.Add(this.pictureBox8);
             this.cartpanel.Controls.Add(this.label31);
-            this.cartpanel.Controls.Add(this.label30);
+            this.cartpanel.Controls.Add(this.TotalLabel);
             this.cartpanel.Location = new System.Drawing.Point(1014, 58);
             this.cartpanel.Name = "cartpanel";
             this.cartpanel.Size = new System.Drawing.Size(360, 735);
@@ -210,10 +211,10 @@
             this.button30.TabIndex = 9;
             this.button30.Text = "Clear All";
             this.button30.UseVisualStyleBackColor = true;
+            this.button30.Click += new System.EventHandler(this.button30_Click);
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::shopix.Properties.Resources.shopping_cart;
             this.pictureBox8.Location = new System.Drawing.Point(15, 19);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(48, 50);
@@ -232,15 +233,15 @@
             this.label31.TabIndex = 4;
             this.label31.Text = "Cart";
             // 
-            // label30
+            // TotalLabel
             // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(21, 663);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(106, 42);
-            this.label30.TabIndex = 3;
-            this.label30.Text = "Total";
+            this.TotalLabel.AutoSize = true;
+            this.TotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalLabel.Location = new System.Drawing.Point(21, 663);
+            this.TotalLabel.Name = "TotalLabel";
+            this.TotalLabel.Size = new System.Drawing.Size(117, 42);
+            this.TotalLabel.TabIndex = 3;
+            this.TotalLabel.Text = "Total:";
             // 
             // flowLayoutPanel1
             // 
@@ -269,7 +270,7 @@
             this.hopeForm2.Dock = System.Windows.Forms.DockStyle.Top;
             this.hopeForm2.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hopeForm2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
-            this.hopeForm2.Image = global::shopix.Properties.Resources.burnice;
+            this.hopeForm2.Image = ((System.Drawing.Image)(resources.GetObject("hopeForm2.Image")));
             this.hopeForm2.ImeMode = System.Windows.Forms.ImeMode.On;
             this.hopeForm2.Location = new System.Drawing.Point(0, 0);
             this.hopeForm2.MaximizeBox = false;
@@ -328,12 +329,12 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Button button30;
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Panel mainpanel;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        public System.Windows.Forms.Label TotalLabel;
     }
 }
 

@@ -12,12 +12,39 @@ namespace shopix.usercontrol
 {
     public partial class panelcart : UserControl
     {
+
+
         public panelcart()
         {
             InitializeComponent();
+
         }
 
+         private void button1_Click(object sender, EventArgs e)
+        {
+            int qty = Convert.ToInt32(quantity.Text);
+
+            qty--;
+
+            if (qty <= 0)
+            {
+                // Remove this panel from the flow layout panel
+                FlowLayoutPanel parent = this.Parent as FlowLayoutPanel;
+                if (parent != null)
+                {
+                    parent.Controls.Remove(this);
+                }
+            }
+            else
+            {
+                quantity.Text = qty.ToString();
+            }
+        }
+
+
+
         // Properties for the icon, name, description, and price
+
 
         private string pcname;
         private string pcquantity;
@@ -47,5 +74,11 @@ namespace shopix.usercontrol
             set { pcprice = value; price.Text = value; }
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+       
     }
 }

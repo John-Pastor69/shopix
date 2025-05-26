@@ -16,7 +16,9 @@ namespace shopix.usercontrol
     public partial class items : UserControl
     {
 
-        panelcart pc1  = new panelcart();    
+        panelcart pc1 = new panelcart();
+
+
         public items()
         {
             InitializeComponent();
@@ -74,14 +76,14 @@ namespace shopix.usercontrol
                 {
                     int i = 1;
                     string myString2 = i.ToString();
-                    label2.Text = myString2;
+                    Quantitylabel.Text = myString2;
                     mClick = false;
                 }
                 else
                 {
                     q = q - 1;
                     string myString = q.ToString();
-                    label2.Text = myString;
+                    Quantitylabel.Text = myString;
                     mClick = false;
                 }
             }
@@ -94,7 +96,7 @@ namespace shopix.usercontrol
                 mClick = true;
                 q = q + 1;
                 string myString = q.ToString();
-                label2.Text = myString;
+                Quantitylabel.Text = myString;
                 mClick = false;
             }
         }
@@ -108,55 +110,54 @@ namespace shopix.usercontrol
             // no quantity yet
 
             // store items to cart
-            
+
 
         }
 
         private void btnAddCart_Click(object sender, EventArgs e)
         {
 
+            Form1 f = this.FindForm() as Form1;
+            if (f == null) return;
 
-            // store to setter in panelcart
-            pc.iName = _name;
-            pc.Price = _price;
+            bool itemExists = false;
 
-            panelcart[] a = new panelcart[1];
-
-
-            // store to array
-            //string[] Name = new string[1] { pc.name.Text };
-            //string[] price = new string[1] { pc.price.Text };
-
-            string[] Name = new string[1] { pc.iName };
-            string[] price = new string[1] { pc.Price };
-            string[] quantity = new string[1] { "v" };
-
-
-
-            // loop to flowlayout2
-
-            /*
-            for (int c = 0; c < a.Length; c++)
+            for (int i = 0; i < f.flowLayoutPanel2.Controls.Count; i++)
             {
-                //store control object on list array
-                a[c] = new panelcart();
+                Control ctrl = f.flowLayoutPanel2.Controls[i];
+                if (ctrl is panelcart)
+                {
+                    panelcart existingPanel = (panelcart)ctrl;
 
-                a[c].name.Text = Name[c];
-                a[c].price.Text = price[c];
+                    if (existingPanel.iName == _name)
+                    {
+                        int oldQty = Convert.ToInt32(existingPanel.quantity.Text);
+                        int newQty = oldQty + q;
+                        existingPanel.quantity.Text = newQty.ToString();
+
+                        itemExists = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!itemExists)
+            {
+                panelcart pc1 = new panelcart();
+
+                pc1.iName = _name;
+                pc1.Price = _price;
+                pc1.quantity.Text = q.ToString();
+
+                pc1.name.Text = _name;
+                pc1.price.Text = _price;
+
+                pc1.Visible = true;
+                f.flowLayoutPanel2.Controls.Add(pc1);
 
                 
             }
-            */
-
-            pc1.Visible = true;
-            f.flowLayoutPanel2.Controls.Add(pc1); {
-                
-            }
-
-
-            MessageBox.Show(pc.name.Text);
-            MessageBox.Show(pc.price.Text);
 
         }
     }
-}
+ }

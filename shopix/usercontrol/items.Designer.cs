@@ -30,7 +30,7 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Quantitylabel = new System.Windows.Forms.Label();
             this.price = new System.Windows.Forms.Label();
             this.btnPlus = new System.Windows.Forms.Button();
             this.icon = new System.Windows.Forms.PictureBox();
@@ -46,7 +46,7 @@
             // 
             this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.Quantitylabel);
             this.panel2.Controls.Add(this.price);
             this.panel2.Controls.Add(this.btnPlus);
             this.panel2.Controls.Add(this.icon);
@@ -67,19 +67,19 @@
             this.panel3.Size = new System.Drawing.Size(505, 3);
             this.panel3.TabIndex = 9;
             // 
-            // label2
+            // Quantitylabel
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(217, 145);
-            this.label2.Margin = new System.Windows.Forms.Padding(3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 23);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "1";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Quantitylabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Quantitylabel.BackColor = System.Drawing.Color.White;
+            this.Quantitylabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Quantitylabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Quantitylabel.Location = new System.Drawing.Point(217, 145);
+            this.Quantitylabel.Margin = new System.Windows.Forms.Padding(3);
+            this.Quantitylabel.Name = "Quantitylabel";
+            this.Quantitylabel.Size = new System.Drawing.Size(50, 23);
+            this.Quantitylabel.TabIndex = 8;
+            this.Quantitylabel.Text = "1";
+            this.Quantitylabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // price
             // 
@@ -170,7 +170,7 @@
         #endregion
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Quantitylabel;
         private System.Windows.Forms.Label price;
         private System.Windows.Forms.Button btnPlus;
         private System.Windows.Forms.PictureBox icon;
