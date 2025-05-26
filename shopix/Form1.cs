@@ -42,7 +42,7 @@ namespace shopix
             button6.Show();
             button7.Show();
 
-            SoundPlayer sp = new SoundPlayer(Resources.anime);
+            SoundPlayer sp = new SoundPlayer(Resources.yamete   );
             sp.Play();
         }
 
@@ -108,7 +108,10 @@ namespace shopix
 
         private void button30_Click(object sender, EventArgs e)
         {
-           
+            SoundPlayer sp = new SoundPlayer(Resources.anime);
+            sp.Play();
+            flowLayoutPanel2.Controls.Clear();
+            label1.Text = "";
         }
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)

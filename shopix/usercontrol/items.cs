@@ -111,7 +111,7 @@ namespace shopix.usercontrol
         private void btnAddCart_Click(object sender, EventArgs e)
         {
 
-            SoundPlayer sp = new SoundPlayer(Resources.yamete);
+            SoundPlayer sp = new SoundPlayer(Resources.Dollar_Sound_effect);
             sp.Play();
 
             Form1 f = this.FindForm() as Form1;
@@ -149,9 +149,39 @@ namespace shopix.usercontrol
                 pc1.name.Text = _name;
                 pc1.price.Text = _price;
 
-                pc1.Visible = true;
-                f.flowLayoutPanel2.Controls.Add(pc1);
+                // add total price calculation
 
+                List<double> list = new List<double>();
+
+                double priceValue = Convert.ToDouble(pc1.Price);
+                list.Add(priceValue);
+
+                foreach (double i in list)
+                {
+                    if (list.Count >= 2)
+                    {
+                        foreach (double i2 in list)
+                        {
+                            priceValue += i;
+                            f.label1.Text = priceValue.ToString();
+
+                            pc1.Visible = true;
+                            f.flowLayoutPanel2.Controls.Add(pc1);
+                            MessageBox.Show("bbbb");
+                        }
+                    }
+                    else
+                    {
+
+                        foreach (double i3 in list)
+                        {
+                            f.label1.Text = priceValue.ToString();
+
+                            pc1.Visible = true;
+                            f.flowLayoutPanel2.Controls.Add(pc1);
+                        }
+                    }
+                }
                 
             }
 
