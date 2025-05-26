@@ -24,33 +24,57 @@ namespace shopix
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            button3.Hide();
-            button4.Hide();
-            button5.Hide();
-            button6.Hide();
-            button7.Hide();
+            mainpanel.Show();
+            cartpanel.Hide();
+            flowLayoutPanel1.Hide();
+            panel2.Hide();
+        }
+        
+
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            mainpanel.Show();
+            cartpanel.Hide();
+            flowLayoutPanel1.Hide();
+            panel2.Hide();
+        }
+        private void buttonBrowse_Click_1(object sender, EventArgs e)
+        {
             mainpanel.Hide();
-        }
+            timerBrowse.Start();
+            cartpanel.Show();
+            flowLayoutPanel1.Show();
+            panel2.Show();
 
-        private void button2_Click(object sender, EventArgs e)
+            dynamicControl();
+        }
+        bool BrowseExpand;
+        private void timerBrowse_Tick(object sender, EventArgs e)
         {
-            button3.Show();
-            button4.Show();
-            button5.Show();
-            button6.Show();
-            button7.Show();
+            if (BrowseExpand)  //if BrowseExpand is true, expand the panel
+            {
+                panelBrowseContainer.Height += 10;
+                if (panelBrowseContainer.Height == panelBrowseContainer.MaximumSize.Height)
+                {
+                    BrowseExpand = false;
+                    timerBrowse.Stop();
+                }
+            }
+            else  // if BrowseExpand is false, collapse the panel
+            {
+                panelBrowseContainer.Height -= 10;
+                if (panelBrowseContainer.Height == panelBrowseContainer.MinimumSize.Height)
+                {
+                    BrowseExpand = true;
+                    timerBrowse.Stop();
+                }
+            }
+            // Move the panel below to follow the expanding/collapsing panel
+            panelCheckoutContainer.Top = panelBrowseContainer.Bottom;
         }
+        
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            button3.Hide();
-            button4.Hide();
-            button5.Hide();
-            button6.Hide();
-            button7.Hide();
-        }
-
-        private void button17_Click(object sender, EventArgs e)
+        private void buttonCheckout_Click(object sender, EventArgs e)
         {
             cartpanel.Hide();
             flowLayoutPanel1.Hide();
@@ -58,15 +82,7 @@ namespace shopix
             panel2.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            cartpanel.Show();
-            flowLayoutPanel1.Show();
-            mainpanel.Hide();
-            panel2.Show();
-        }
 
-        
         //dynamic user control
         private void dynamicControl()
         {
@@ -96,7 +112,12 @@ namespace shopix
 
         private void button3_Click(object sender, EventArgs e)
         {
-            dynamicControl();
+
         }
+       
+
+
+
+
     }
 }

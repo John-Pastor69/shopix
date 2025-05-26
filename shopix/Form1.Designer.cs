@@ -28,15 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panelHomeContainer = new System.Windows.Forms.Panel();
+            this.buttonHome = new System.Windows.Forms.Button();
+            this.panelCheckoutContainer = new System.Windows.Forms.Panel();
+            this.buttonCheckout = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cartpanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -48,116 +45,66 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.mainpanel = new System.Windows.Forms.Panel();
             this.hopeForm2 = new ReaLTaiizor.Forms.HopeForm();
+            this.panelBrowseContainer = new System.Windows.Forms.Panel();
+            this.buttonBrowse = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.timerBrowse = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
+            this.panelHomeContainer.SuspendLayout();
+            this.panelCheckoutContainer.SuspendLayout();
             this.cartpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panelBrowseContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button17);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.panelHomeContainer);
+            this.panel1.Controls.Add(this.panelCheckoutContainer);
             this.panel1.Location = new System.Drawing.Point(12, 58);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(226, 735);
             this.panel1.TabIndex = 6;
             // 
-            // button17
+            // panelHomeContainer
             // 
-            this.button17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button17.Location = new System.Drawing.Point(0, 404);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(226, 50);
-            this.button17.TabIndex = 13;
-            this.button17.Text = "checkout";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
+            this.panelHomeContainer.Controls.Add(this.buttonHome);
+            this.panelHomeContainer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHomeContainer.Location = new System.Drawing.Point(0, 0);
+            this.panelHomeContainer.Name = "panelHomeContainer";
+            this.panelHomeContainer.Size = new System.Drawing.Size(226, 57);
+            this.panelHomeContainer.TabIndex = 16;
             // 
-            // button7
+            // buttonHome
             // 
-            this.button7.Location = new System.Drawing.Point(95, 348);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(28, 50);
-            this.button7.TabIndex = 12;
-            this.button7.Text = "V";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.buttonHome.Location = new System.Drawing.Point(3, 3);
+            this.buttonHome.Name = "buttonHome";
+            this.buttonHome.Size = new System.Drawing.Size(220, 50);
+            this.buttonHome.TabIndex = 7;
+            this.buttonHome.Text = "HOME";
+            this.buttonHome.UseVisualStyleBackColor = true;
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
-            // button6
+            // panelCheckoutContainer
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Location = new System.Drawing.Point(0, 292);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(226, 50);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.panelCheckoutContainer.Controls.Add(this.buttonCheckout);
+            this.panelCheckoutContainer.Location = new System.Drawing.Point(0, 118);
+            this.panelCheckoutContainer.Name = "panelCheckoutContainer";
+            this.panelCheckoutContainer.Size = new System.Drawing.Size(226, 57);
+            this.panelCheckoutContainer.TabIndex = 15;
             // 
-            // button5
+            // buttonCheckout
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Location = new System.Drawing.Point(0, 180);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(226, 50);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(0, 236);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(226, 50);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(0, 124);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(226, 50);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(0, 56);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(226, 50);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "All items";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(226, 50);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "home";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonCheckout.Location = new System.Drawing.Point(3, 3);
+            this.buttonCheckout.Name = "buttonCheckout";
+            this.buttonCheckout.Size = new System.Drawing.Size(220, 50);
+            this.buttonCheckout.TabIndex = 13;
+            this.buttonCheckout.Text = "CHECKOUT";
+            this.buttonCheckout.UseVisualStyleBackColor = true;
+            this.buttonCheckout.Click += new System.EventHandler(this.buttonCheckout_Click);
             // 
             // panel2
             // 
@@ -254,7 +201,7 @@
             // 
             // mainpanel
             // 
-            this.mainpanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.mainpanel.BackColor = System.Drawing.Color.White;
             this.mainpanel.Location = new System.Drawing.Point(254, 58);
             this.mainpanel.Name = "mainpanel";
             this.mainpanel.Size = new System.Drawing.Size(1120, 735);
@@ -280,6 +227,73 @@
             this.hopeForm2.Text = "Shoppix";
             this.hopeForm2.ThemeColor = System.Drawing.Color.DarkSlateGray;
             // 
+            // panelBrowseContainer
+            // 
+            this.panelBrowseContainer.Controls.Add(this.buttonBrowse);
+            this.panelBrowseContainer.Controls.Add(this.button3);
+            this.panelBrowseContainer.Controls.Add(this.button4);
+            this.panelBrowseContainer.Controls.Add(this.button5);
+            this.panelBrowseContainer.Controls.Add(this.button6);
+            this.panelBrowseContainer.Location = new System.Drawing.Point(12, 117);
+            this.panelBrowseContainer.MaximumSize = new System.Drawing.Size(226, 281);
+            this.panelBrowseContainer.MinimumSize = new System.Drawing.Size(226, 57);
+            this.panelBrowseContainer.Name = "panelBrowseContainer";
+            this.panelBrowseContainer.Size = new System.Drawing.Size(226, 57);
+            this.panelBrowseContainer.TabIndex = 17;
+            // 
+            // buttonBrowse
+            // 
+            this.buttonBrowse.Location = new System.Drawing.Point(3, 3);
+            this.buttonBrowse.Name = "buttonBrowse";
+            this.buttonBrowse.Size = new System.Drawing.Size(220, 50);
+            this.buttonBrowse.TabIndex = 12;
+            this.buttonBrowse.Text = "BROWSE";
+            this.buttonBrowse.UseVisualStyleBackColor = true;
+            this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click_1);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(3, 59);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(220, 50);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(3, 115);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(220, 50);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(3, 171);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(220, 50);
+            this.button5.TabIndex = 15;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(3, 227);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(220, 50);
+            this.button6.TabIndex = 16;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // timerBrowse
+            // 
+            this.timerBrowse.Enabled = true;
+            this.timerBrowse.Interval = 10;
+            this.timerBrowse.Tick += new System.EventHandler(this.timerBrowse_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -287,6 +301,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1386, 805);
+            this.Controls.Add(this.panelBrowseContainer);
             this.Controls.Add(this.cartpanel);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel2);
@@ -306,9 +321,12 @@
             this.TransparencyKey = System.Drawing.Color.Purple;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
+            this.panelHomeContainer.ResumeLayout(false);
+            this.panelCheckoutContainer.ResumeLayout(false);
             this.cartpanel.ResumeLayout(false);
             this.cartpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.panelBrowseContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -316,17 +334,11 @@
         #endregion
         private ReaLTaiizor.Forms.HopeForm hopeForm2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button buttonHome;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel cartpanel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button buttonCheckout;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.PictureBox pictureBox8;
@@ -334,6 +346,15 @@
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Panel mainpanel;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Panel panelHomeContainer;
+        private System.Windows.Forms.Panel panelCheckoutContainer;
+        private System.Windows.Forms.Panel panelBrowseContainer;
+        private System.Windows.Forms.Button buttonBrowse;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Timer timerBrowse;
     }
 }
 
