@@ -6,7 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using shopix.usercontrol;
 using System.Windows.Forms;
+using System.Runtime.CompilerServices;
+using System.Diagnostics;
+using System.Security.Cryptography;
+using System.Xml.Linq;
 
 namespace shopix
 {
@@ -24,32 +29,7 @@ namespace shopix
             button5.Hide();
             button6.Hide();
             button7.Hide();
-        }
-
-        private void mouse_enter (object sender, EventArgs e)
-        {
-            this.ForeColor = Color.LightGray;
-        }
-
-        private void mouse_click(object sender, EventArgs e)
-        {
-            this.BackColor = Color.DarkOrange;
-        }
-
-        private void parrotNavigationBar1_MouseHover(object sender, EventArgs e)
-        {
-            this.ForeColor = Color.LightGray;
-        }
-
-        private void parrotNavigationBar1_MouseEnter(object sender, EventArgs e)
-        {
-
-           
-        }
-
-        private void parrotNavigationBar1_Click(object sender, EventArgs e)
-        {
-
+            mainpanel.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -68,6 +48,55 @@ namespace shopix
             button5.Hide();
             button6.Hide();
             button7.Hide();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            cartpanel.Hide();
+            flowLayoutPanel1.Hide();
+            mainpanel.Show();
+            panel2.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cartpanel.Show();
+            flowLayoutPanel1.Show();
+            mainpanel.Hide();
+            panel2.Show();
+        }
+
+        
+        //dynamic user control
+        private void dynamicControl()
+        {
+            flowLayoutPanel1.Controls.Clear();
+
+            items[] listItems = new items[5];
+
+            string[] titles = new string[5] { "camellya's armpit", "Vivian's nude", "Master shifu", "pyromaniac armpit", "summer chocolate", };
+            string[] descriptions = new string[5] { "some juicy shit", "im hard rn", "very powerful ally", "smells like nitro fuel", "this is a supposed child wtf", };
+            string[] price = new string[5] { "377.99", "739.99", "455.99", "599.99", "289.99", };
+            Image[] icons = new Image[5] { Properties.Resources.camellya, Properties.Resources.me, Properties.Resources.menu, Properties.Resources.burnice, Properties.Resources.shopping_cart };
+
+            for (int i = 0; i < listItems.Length; i++)
+            {
+                //store control object on list array
+                listItems[i] = new items();
+
+                listItems[i].Name = titles[i];
+                listItems[i].Desc = descriptions[i];
+                listItems[i].Price = price[i];
+                listItems[i].Icon = icons[i];
+
+                flowLayoutPanel1.Controls.Add(listItems[i]);
+            }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dynamicControl();
         }
     }
 }

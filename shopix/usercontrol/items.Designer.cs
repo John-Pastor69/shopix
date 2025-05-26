@@ -33,11 +33,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.price = new System.Windows.Forms.Label();
             this.btnPlus = new System.Windows.Forms.Button();
+            this.icon = new System.Windows.Forms.PictureBox();
             this.name = new System.Windows.Forms.Label();
             this.desc = new System.Windows.Forms.Label();
             this.btnAddCart = new System.Windows.Forms.Button();
             this.btnMinus = new System.Windows.Forms.Button();
-            this.icon = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icon)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +54,7 @@
             this.panel2.Controls.Add(this.desc);
             this.panel2.Controls.Add(this.btnAddCart);
             this.panel2.Controls.Add(this.btnMinus);
-            this.panel2.Location = new System.Drawing.Point(12, 15);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(357, 179);
             this.panel2.TabIndex = 9;
@@ -100,6 +100,17 @@
             this.btnPlus.TabIndex = 5;
             this.btnPlus.Text = "+";
             this.btnPlus.UseVisualStyleBackColor = true;
+            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click_1);
+            // 
+            // icon
+            // 
+            this.icon.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.icon.Location = new System.Drawing.Point(3, 3);
+            this.icon.Name = "icon";
+            this.icon.Size = new System.Drawing.Size(136, 123);
+            this.icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.icon.TabIndex = 0;
+            this.icon.TabStop = false;
             // 
             // name
             // 
@@ -127,6 +138,7 @@
             this.btnAddCart.TabIndex = 3;
             this.btnAddCart.Text = "Add to Cart";
             this.btnAddCart.UseVisualStyleBackColor = true;
+            this.btnAddCart.Click += new System.EventHandler(this.btnAddCart_Click);
             // 
             // btnMinus
             // 
@@ -139,16 +151,7 @@
             this.btnMinus.TabIndex = 4;
             this.btnMinus.Text = "-";
             this.btnMinus.UseVisualStyleBackColor = true;
-            // 
-            // icon
-            // 
-            this.icon.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.icon.Location = new System.Drawing.Point(3, 3);
-            this.icon.Name = "icon";
-            this.icon.Size = new System.Drawing.Size(136, 123);
-            this.icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.icon.TabIndex = 0;
-            this.icon.TabStop = false;
+            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click_1);
             // 
             // items
             // 
@@ -156,7 +159,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
             this.Name = "items";
-            this.Size = new System.Drawing.Size(387, 216);
+            this.Size = new System.Drawing.Size(357, 179);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icon)).EndInit();

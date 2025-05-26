@@ -29,48 +29,48 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.price = new System.Windows.Forms.Label();
+            this.quantity = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.price);
+            this.panel1.Controls.Add(this.quantity);
+            this.panel1.Controls.Add(this.name);
             this.panel1.Location = new System.Drawing.Point(3, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(348, 47);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // price
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "name";
+            this.price.AutoSize = true;
+            this.price.Location = new System.Drawing.Point(295, 15);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(37, 16);
+            this.price.TabIndex = 2;
+            this.price.Text = "price";
             // 
-            // label2
+            // quantity
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(111, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "quan";
+            this.quantity.AutoSize = true;
+            this.quantity.Location = new System.Drawing.Point(111, 15);
+            this.quantity.Name = "quantity";
+            this.quantity.Size = new System.Drawing.Size(53, 16);
+            this.quantity.TabIndex = 1;
+            this.quantity.Text = "quantity";
             // 
-            // label3
+            // name
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(295, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "price";
+            this.name.AutoSize = true;
+            this.name.Location = new System.Drawing.Point(3, 15);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(41, 16);
+            this.name.TabIndex = 0;
+            this.name.Text = "name";
             // 
             // panelcart
             // 
@@ -88,8 +88,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label name;
+        public System.Windows.Forms.Label price;
+        public System.Windows.Forms.Label quantity;
     }
 }
