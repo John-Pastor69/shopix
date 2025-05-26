@@ -143,6 +143,7 @@
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
+            this.panel24 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -264,6 +265,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.panel2.Location = new System.Drawing.Point(254, 58);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(730, 735);
@@ -294,7 +296,7 @@
             this.flowLayoutPanel1.Controls.Add(this.panel14);
             this.flowLayoutPanel1.Controls.Add(this.panel16);
             this.flowLayoutPanel1.Controls.Add(this.panel18);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(254, 58);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(251, 58);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(754, 735);
@@ -1408,6 +1410,14 @@
             this.label43.TabIndex = 0;
             this.label43.Text = "name";
             // 
+            // panel24
+            // 
+            this.panel24.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel24.Location = new System.Drawing.Point(254, 58);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(1096, 735);
+            this.panel24.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1415,11 +1425,12 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1386, 805);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.hopeForm2);
+            this.Controls.Add(this.panel24);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -1590,6 +1601,7 @@
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Panel panel24;
     }
 }
 
