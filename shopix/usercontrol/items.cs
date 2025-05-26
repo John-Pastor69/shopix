@@ -15,6 +15,8 @@ namespace shopix.usercontrol
 {
     public partial class items : UserControl
     {
+
+        panelcart pc1  = new panelcart();    
         public items()
         {
             InitializeComponent();
@@ -129,9 +131,11 @@ namespace shopix.usercontrol
             string[] price = new string[1] { pc.Price };
             string[] quantity = new string[1] { "v" };
 
-            
+
 
             // loop to flowlayout2
+
+            /*
             for (int c = 0; c < a.Length; c++)
             {
                 //store control object on list array
@@ -140,8 +144,15 @@ namespace shopix.usercontrol
                 a[c].name.Text = Name[c];
                 a[c].price.Text = price[c];
 
-                f.flowLayoutPanel2.Controls.Add(a[c]);
+                
             }
+            */
+
+            pc1.Visible = true;
+            f.flowLayoutPanel2.Controls.Add(pc1); {
+                
+            }
+
 
             MessageBox.Show(pc.name.Text);
             MessageBox.Show(pc.price.Text);
