@@ -115,8 +115,8 @@ namespace shopix.usercontrol
 
 
             // store to setter in panelcart
-            pc.name.Text = _name;
-            pc.price.Text = _price;
+            pc.iName = _name;
+            pc.Price = _price;
 
             panelcart[] a = new panelcart[1];
 
@@ -125,9 +125,11 @@ namespace shopix.usercontrol
             //string[] Name = new string[1] { pc.name.Text };
             //string[] price = new string[1] { pc.price.Text };
 
-            string[] Name = new string[1] {"a" };
-            string[] price = new string[1] { "c"};
+            string[] Name = new string[1] { pc.iName };
+            string[] price = new string[1] { pc.Price };
             string[] quantity = new string[1] { "v" };
+
+            
 
             // loop to flowlayout2
             for (int c = 0; c < a.Length; c++)
@@ -135,11 +137,14 @@ namespace shopix.usercontrol
                 //store control object on list array
                 a[c] = new panelcart();
 
-                a[c].iName = Name[c];
-                a[c].Price = price[c];
+                a[c].name.Text = Name[c];
+                a[c].price.Text = price[c];
 
                 f.flowLayoutPanel2.Controls.Add(a[c]);
             }
+
+            MessageBox.Show(pc.name.Text);
+            MessageBox.Show(pc.price.Text);
 
         }
     }
