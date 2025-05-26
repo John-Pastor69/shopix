@@ -62,6 +62,7 @@
             // 
             // panel1
             // 
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.Controls.Add(this.panelHomeContainer);
             this.panel1.Controls.Add(this.panelCheckoutContainer);
             this.panel1.Location = new System.Drawing.Point(12, 58);
@@ -72,10 +73,9 @@
             // panelHomeContainer
             // 
             this.panelHomeContainer.Controls.Add(this.buttonHome);
-            this.panelHomeContainer.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHomeContainer.Location = new System.Drawing.Point(0, 0);
             this.panelHomeContainer.Name = "panelHomeContainer";
-            this.panelHomeContainer.Size = new System.Drawing.Size(226, 57);
+            this.panelHomeContainer.Size = new System.Drawing.Size(226, 55);
             this.panelHomeContainer.TabIndex = 16;
             // 
             // buttonHome
@@ -100,6 +100,7 @@
             // 
             this.buttonCheckout.Location = new System.Drawing.Point(3, 3);
             this.buttonCheckout.Name = "buttonCheckout";
+            this.buttonCheckout.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.buttonCheckout.Size = new System.Drawing.Size(220, 50);
             this.buttonCheckout.TabIndex = 13;
             this.buttonCheckout.Text = "CHECKOUT";
@@ -238,6 +239,7 @@
             this.panelBrowseContainer.MaximumSize = new System.Drawing.Size(226, 281);
             this.panelBrowseContainer.MinimumSize = new System.Drawing.Size(226, 57);
             this.panelBrowseContainer.Name = "panelBrowseContainer";
+            this.panelBrowseContainer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panelBrowseContainer.Size = new System.Drawing.Size(226, 57);
             this.panelBrowseContainer.TabIndex = 17;
             // 

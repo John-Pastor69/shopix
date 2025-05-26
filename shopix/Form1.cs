@@ -70,6 +70,7 @@ namespace shopix
                 }
             }
             // Move the panel below to follow the expanding/collapsing panel
+            
             panelCheckoutContainer.Top = panelBrowseContainer.Bottom;
         }
         
