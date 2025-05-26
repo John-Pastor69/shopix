@@ -189,6 +189,7 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(354, 537);
             this.flowLayoutPanel2.TabIndex = 11;
+            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
             // button31
             // 
@@ -215,6 +216,7 @@
             // 
             // pictureBox8
             // 
+            this.pictureBox8.Image = global::shopix.Properties.Resources.master;
             this.pictureBox8.Location = new System.Drawing.Point(15, 19);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(48, 50);

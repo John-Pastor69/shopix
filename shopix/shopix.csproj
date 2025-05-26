@@ -203,6 +203,27 @@
   <ItemGroup>
     <None Include="Resources\shopping-cart.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\master.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iori.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vivian.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tim-Jane-Doe-1-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yamete Kudasai %28online-audio-converter.com%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Anime Girl Naughty Ahh Sound Effect %28online-audio-converter.com%29.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Oh Yeah Daddy! Sound Effect %28online-audio-converter.com%29.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

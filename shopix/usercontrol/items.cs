@@ -1,4 +1,5 @@
-﻿using System;
+﻿using shopix.Properties;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
+using System.Media;
 using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
@@ -105,17 +107,12 @@ namespace shopix.usercontrol
 
         Form1 f = new Form1();
         panelcart pc = new panelcart();
-        private void dynamicControl()
-        {
-            // no quantity yet
-
-            // store items to cart
-
-
-        }
 
         private void btnAddCart_Click(object sender, EventArgs e)
         {
+
+            SoundPlayer sp = new SoundPlayer(Resources.yamete);
+            sp.Play();
 
             Form1 f = this.FindForm() as Form1;
             if (f == null) return;

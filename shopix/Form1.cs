@@ -12,6 +12,8 @@ using System.Runtime.CompilerServices;
 using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Xml.Linq;
+using System.Media;
+using shopix.Properties;
 
 namespace shopix
 {
@@ -39,6 +41,9 @@ namespace shopix
             button5.Show();
             button6.Show();
             button7.Show();
+
+            SoundPlayer sp = new SoundPlayer(Resources.anime);
+            sp.Play();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -77,7 +82,7 @@ namespace shopix
             string[] titles = new string[5] { "camellya's armpit", "Vivian's nude", "Master shifu", "pyromaniac armpit", "summer chocolate", };
             string[] descriptions = new string[5] { "some juicy shit", "im hard rn", "very powerful ally", "smells like nitro fuel", "this is a supposed child wtf", };
             string[] price = new string[5] { "377.99", "739.99", "455.99", "599.99", "289.99", };
-            Image[] icons = new Image[5] { Properties.Resources.camellya, Properties.Resources.me, Properties.Resources.menu, Properties.Resources.burnice, Properties.Resources.shopping_cart };
+            Image[] icons = new Image[5] { Properties.Resources.camellya, Properties.Resources.vivian, Properties.Resources.master, Properties.Resources.burnice, Properties.Resources.iori };
 
             for (int i = 0; i < listItems.Length; i++)
             {
@@ -96,12 +101,19 @@ namespace shopix
 
         private void button3_Click(object sender, EventArgs e)
         {
+            SoundPlayer sp = new SoundPlayer(Resources.daddy);
+            sp.Play();
             dynamicControl();
         }
 
         private void button30_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
