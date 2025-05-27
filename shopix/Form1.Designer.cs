@@ -45,7 +45,6 @@
             this.label30 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.mainpanel = new System.Windows.Forms.Panel();
-            this.confirmbtn = new System.Windows.Forms.Button();
             this.panelcheckout = new System.Windows.Forms.Panel();
             this.checkoutname = new System.Windows.Forms.Label();
             this.checkoutprice = new System.Windows.Forms.Label();
@@ -57,6 +56,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutCheckOut = new System.Windows.Forms.FlowLayoutPanel();
+            this.confirmbtn = new System.Windows.Forms.Button();
             this.panelBrowseContainer = new System.Windows.Forms.Panel();
             this.buttonBrowse = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -249,20 +249,6 @@
             this.mainpanel.Size = new System.Drawing.Size(1120, 735);
             this.mainpanel.TabIndex = 9;
             // 
-            // confirmbtn
-            // 
-            this.confirmbtn.BackColor = System.Drawing.Color.Red;
-            this.confirmbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.confirmbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmbtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.confirmbtn.Location = new System.Drawing.Point(714, 72);
-            this.confirmbtn.Name = "confirmbtn";
-            this.confirmbtn.Size = new System.Drawing.Size(220, 50);
-            this.confirmbtn.TabIndex = 13;
-            this.confirmbtn.Text = "CONFIRM";
-            this.confirmbtn.UseVisualStyleBackColor = false;
-            this.confirmbtn.Click += new System.EventHandler(this.confirmbtn_Click);
-            // 
             // panelcheckout
             // 
             this.panelcheckout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -382,6 +368,20 @@
             this.flowLayoutCheckOut.Size = new System.Drawing.Size(360, 444);
             this.flowLayoutCheckOut.TabIndex = 0;
             // 
+            // confirmbtn
+            // 
+            this.confirmbtn.BackColor = System.Drawing.Color.Red;
+            this.confirmbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.confirmbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmbtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.confirmbtn.Location = new System.Drawing.Point(714, 72);
+            this.confirmbtn.Name = "confirmbtn";
+            this.confirmbtn.Size = new System.Drawing.Size(220, 50);
+            this.confirmbtn.TabIndex = 13;
+            this.confirmbtn.Text = "CONFIRM";
+            this.confirmbtn.UseVisualStyleBackColor = false;
+            this.confirmbtn.Click += new System.EventHandler(this.confirmbtn_Click);
+            // 
             // panelBrowseContainer
             // 
             this.panelBrowseContainer.Controls.Add(this.buttonBrowse);
@@ -464,7 +464,7 @@
             this.hopeForm2.Dock = System.Windows.Forms.DockStyle.Top;
             this.hopeForm2.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hopeForm2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
-            this.hopeForm2.Image = global::shopix.Properties.Resources.burnice;
+            this.hopeForm2.Image = global::shopix.Properties.Resources.Shoppix_logo_transparent;
             this.hopeForm2.ImeMode = System.Windows.Forms.ImeMode.On;
             this.hopeForm2.Location = new System.Drawing.Point(0, 0);
             this.hopeForm2.MaximizeBox = false;

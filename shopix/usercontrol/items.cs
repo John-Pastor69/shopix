@@ -128,7 +128,7 @@ namespace shopix.usercontrol
                 //pc1
                 pc1.iName = _name;
                 pc1.iPrice = _price;
-                pc1.iQauntity = q.ToString();
+                pc1.iQuantity = q.ToString();
 
                 pc1.name.Text = _name;
                 pc1.price.Text = _price;
