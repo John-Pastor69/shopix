@@ -134,7 +134,7 @@
             // 
             // cartpanel
             // 
-            this.cartpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.cartpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.cartpanel.Controls.Add(this.TotalL);
             this.cartpanel.Controls.Add(this.flowLayoutPanel2);
             this.cartpanel.Controls.Add(this.buybtn);
@@ -264,7 +264,7 @@
             // 
             // panelcheckout
             // 
-            this.panelcheckout.BackColor = System.Drawing.Color.Gold;
+            this.panelcheckout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panelcheckout.Controls.Add(this.checkoutname);
             this.panelcheckout.Controls.Add(this.checkoutprice);
             this.panelcheckout.Controls.Add(this.checkoutqty);
@@ -275,7 +275,7 @@
             this.panelcheckout.Controls.Add(this.label2);
             this.panelcheckout.Controls.Add(this.label1);
             this.panelcheckout.Controls.Add(this.flowLayoutCheckOut);
-            this.panelcheckout.Location = new System.Drawing.Point(118, 3);
+            this.panelcheckout.Location = new System.Drawing.Point(214, 0);
             this.panelcheckout.Name = "panelcheckout";
             this.panelcheckout.Size = new System.Drawing.Size(366, 729);
             this.panelcheckout.TabIndex = 1;
@@ -283,7 +283,7 @@
             // checkoutname
             // 
             this.checkoutname.AutoSize = true;
-            this.checkoutname.Location = new System.Drawing.Point(9, 59);
+            this.checkoutname.Location = new System.Drawing.Point(9, 94);
             this.checkoutname.Name = "checkoutname";
             this.checkoutname.Size = new System.Drawing.Size(41, 16);
             this.checkoutname.TabIndex = 9;
@@ -292,7 +292,7 @@
             // checkoutprice
             // 
             this.checkoutprice.AutoSize = true;
-            this.checkoutprice.Location = new System.Drawing.Point(323, 61);
+            this.checkoutprice.Location = new System.Drawing.Point(323, 96);
             this.checkoutprice.Name = "checkoutprice";
             this.checkoutprice.Size = new System.Drawing.Size(37, 16);
             this.checkoutprice.TabIndex = 3;
@@ -301,7 +301,7 @@
             // checkoutqty
             // 
             this.checkoutqty.AutoSize = true;
-            this.checkoutqty.Location = new System.Drawing.Point(215, 61);
+            this.checkoutqty.Location = new System.Drawing.Point(215, 96);
             this.checkoutqty.Name = "checkoutqty";
             this.checkoutqty.Size = new System.Drawing.Size(25, 16);
             this.checkoutqty.TabIndex = 8;
@@ -311,7 +311,7 @@
             // 
             this.subtotal.AutoSize = true;
             this.subtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subtotal.ForeColor = System.Drawing.Color.White;
+            this.subtotal.ForeColor = System.Drawing.Color.Black;
             this.subtotal.Location = new System.Drawing.Point(228, 615);
             this.subtotal.Name = "subtotal";
             this.subtotal.Size = new System.Drawing.Size(48, 25);
@@ -322,7 +322,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(3, 562);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(357, 36);
@@ -333,8 +333,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(6, 77);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(3, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(357, 36);
             this.label4.TabIndex = 5;
@@ -344,7 +344,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(6, 609);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(145, 32);
@@ -355,7 +355,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(111, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 32);
@@ -366,7 +366,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(81, 676);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(195, 32);
@@ -375,7 +375,7 @@
             // 
             // flowLayoutCheckOut
             // 
-            this.flowLayoutCheckOut.BackColor = System.Drawing.Color.RosyBrown;
+            this.flowLayoutCheckOut.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.flowLayoutCheckOut.Location = new System.Drawing.Point(3, 115);
             this.flowLayoutCheckOut.Name = "flowLayoutCheckOut";
             this.flowLayoutCheckOut.Size = new System.Drawing.Size(360, 444);
@@ -393,7 +393,7 @@
             this.panelBrowseContainer.MinimumSize = new System.Drawing.Size(226, 57);
             this.panelBrowseContainer.Name = "panelBrowseContainer";
             this.panelBrowseContainer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panelBrowseContainer.Size = new System.Drawing.Size(226, 281);
+            this.panelBrowseContainer.Size = new System.Drawing.Size(226, 57);
             this.panelBrowseContainer.TabIndex = 17;
             // 
             // buttonBrowse
