@@ -111,6 +111,25 @@ namespace shopix
             }
 
         }
+        public void CartItem_ItemRemoved(object sender, EventArgs e)
+        {
+            panelcart removedItem = sender as panelcart;
+            if (removedItem != null)
+            {
+                // Remove the corresponding checkoutpanel item
+                for (int i = flowLayoutCheckOut.Controls.Count - 1; i >= 0; i--)
+                {
+                    Control ctrl = flowLayoutCheckOut.Controls[i];
+                    if (ctrl is checkoutpanel cp && cp.cName == removedItem.iName)
+                    {
+                        flowLayoutCheckOut.Controls.Remove(cp);
+                        cp.Dispose();
+                        break;
+                    }
+                }
+            }
+        }
+
 
         #endregion
 

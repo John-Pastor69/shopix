@@ -38,8 +38,7 @@ namespace shopix.usercontrol
         }
 
         [Category("Custom Props")]
-
-        public string Name
+        public new string Name
         {
             get { return _name; }
             set { _name = value; name.Text = value; }
@@ -123,7 +122,6 @@ namespace shopix.usercontrol
 
             if (!itemExists)
             {
-
                 panelcart pc1 = new panelcart();
                 checkoutpanel pc2 = new checkoutpanel();
 
@@ -135,6 +133,9 @@ namespace shopix.usercontrol
                 pc1.name.Text = _name;
                 pc1.price.Text = _price;
                 pc1.quantity.Text = q.ToString();
+
+                // Subscribe to the ItemRemoved event
+                pc1.ItemRemoved += f.CartItem_ItemRemoved;
 
                 pc1.Visible = true;
                 f.flowLayoutPanel2.Controls.Add(pc1);

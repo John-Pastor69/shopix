@@ -12,6 +12,7 @@ namespace shopix.usercontrol
 {
     public partial class panelcart : UserControl
     {
+        public event EventHandler ItemRemoved;
         public panelcart()
         {
             InitializeComponent();
@@ -48,36 +49,32 @@ namespace shopix.usercontrol
         }
 
 
-        #endregion
-
         private void button1_Click(object sender, EventArgs e)
         {
             int qty = Convert.ToInt32(quantity.Text);
 
-            if (qty >= 1)
+            if (qty >= 2)
             {
                 qty--;
                 quantity.Text = qty.ToString();
-
+                Form1 form = this.FindForm() as Form1;
+                form?.UpdateTotalPrice();
             }
-            if (qty == 0)
+            else if (qty == 1)
             {
                 // Remove this panel from the parent (i.e., the cart)
                 Form1 f = this.FindForm() as Form1;
                 if (f != null)
                 {
                     f.flowLayoutPanel2.Controls.Remove(this);
+                    ItemRemoved?.Invoke(this, EventArgs.Empty); // Notify parent
                     f.UpdateTotalPrice();
                 }
             }
 
-            // Always update total price after quantity change or removal
-            Form1 form = this.FindForm() as Form1;
-            if (form != null)
-            {
-                form.UpdateTotalPrice();
-            }
         }
 
+
+        #endregion
     }
 }
