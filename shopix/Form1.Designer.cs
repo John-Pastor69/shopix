@@ -39,11 +39,13 @@
             this.TotalL = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.buybtn = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
+            this.buttonClearAll = new System.Windows.Forms.Button();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.mainpanel = new System.Windows.Forms.Panel();
+            this.confirmbtn = new System.Windows.Forms.Button();
             this.panelcheckout = new System.Windows.Forms.Panel();
             this.checkoutname = new System.Windows.Forms.Label();
             this.checkoutprice = new System.Windows.Forms.Label();
@@ -62,17 +64,15 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.timerBrowse = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.hopeForm2 = new ReaLTaiizor.Forms.HopeForm();
-            this.resetbtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelHomeContainer.SuspendLayout();
             this.panelCheckoutContainer.SuspendLayout();
             this.cartpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.mainpanel.SuspendLayout();
             this.panelcheckout.SuspendLayout();
             this.panelBrowseContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,6 +95,7 @@
             // 
             // buttonHome
             // 
+            this.buttonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHome.Location = new System.Drawing.Point(3, 3);
             this.buttonHome.Name = "buttonHome";
             this.buttonHome.Size = new System.Drawing.Size(220, 50);
@@ -113,6 +114,7 @@
             // 
             // buttonCheckout
             // 
+            this.buttonCheckout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCheckout.Location = new System.Drawing.Point(3, 3);
             this.buttonCheckout.Name = "buttonCheckout";
             this.buttonCheckout.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -132,11 +134,11 @@
             // 
             // cartpanel
             // 
-            this.cartpanel.BackColor = System.Drawing.Color.DarkCyan;
+            this.cartpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.cartpanel.Controls.Add(this.TotalL);
             this.cartpanel.Controls.Add(this.flowLayoutPanel2);
             this.cartpanel.Controls.Add(this.buybtn);
-            this.cartpanel.Controls.Add(this.button30);
+            this.cartpanel.Controls.Add(this.buttonClearAll);
             this.cartpanel.Controls.Add(this.pictureBox8);
             this.cartpanel.Controls.Add(this.label31);
             this.cartpanel.Controls.Add(this.label30);
@@ -157,7 +159,7 @@
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.flowLayoutPanel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 94);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(354, 537);
@@ -167,25 +169,42 @@
             // 
             this.buybtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buybtn.Location = new System.Drawing.Point(218, 662);
+            this.buybtn.BackColor = System.Drawing.Color.Red;
+            this.buybtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buybtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buybtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buybtn.Location = new System.Drawing.Point(258, 662);
             this.buybtn.Name = "buybtn";
-            this.buybtn.Size = new System.Drawing.Size(124, 43);
+            this.buybtn.Size = new System.Drawing.Size(84, 43);
             this.buybtn.TabIndex = 10;
             this.buybtn.Text = "Buy";
-            this.buybtn.UseVisualStyleBackColor = true;
+            this.buybtn.UseVisualStyleBackColor = false;
             this.buybtn.Click += new System.EventHandler(this.buybtn_Click);
             // 
-            // button30
+            // buttonClearAll
             // 
-            this.button30.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.buttonClearAll.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button30.Location = new System.Drawing.Point(218, 19);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(124, 43);
-            this.button30.TabIndex = 9;
-            this.button30.Text = "Clear All";
-            this.button30.UseVisualStyleBackColor = true;
-            this.button30.Click += new System.EventHandler(this.button30_Click);
+            this.buttonClearAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonClearAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonClearAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClearAll.Location = new System.Drawing.Point(258, 26);
+            this.buttonClearAll.Name = "buttonClearAll";
+            this.buttonClearAll.Size = new System.Drawing.Size(84, 43);
+            this.buttonClearAll.TabIndex = 9;
+            this.buttonClearAll.Text = "Clear";
+            this.buttonClearAll.UseVisualStyleBackColor = false;
+            this.buttonClearAll.Click += new System.EventHandler(this.buttonClearAll_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::shopix.Properties.Resources.shopping_cart;
+            this.pictureBox8.Location = new System.Drawing.Point(15, 19);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(48, 50);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 5;
+            this.pictureBox8.TabStop = false;
             // 
             // label31
             // 
@@ -222,12 +241,26 @@
             // mainpanel
             // 
             this.mainpanel.BackColor = System.Drawing.Color.White;
-            this.mainpanel.Controls.Add(this.resetbtn);
+            this.mainpanel.Controls.Add(this.confirmbtn);
             this.mainpanel.Controls.Add(this.panelcheckout);
             this.mainpanel.Location = new System.Drawing.Point(254, 58);
             this.mainpanel.Name = "mainpanel";
             this.mainpanel.Size = new System.Drawing.Size(1120, 735);
             this.mainpanel.TabIndex = 9;
+            // 
+            // confirmbtn
+            // 
+            this.confirmbtn.BackColor = System.Drawing.Color.Red;
+            this.confirmbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.confirmbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmbtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.confirmbtn.Location = new System.Drawing.Point(714, 72);
+            this.confirmbtn.Name = "confirmbtn";
+            this.confirmbtn.Size = new System.Drawing.Size(220, 50);
+            this.confirmbtn.TabIndex = 13;
+            this.confirmbtn.Text = "CONFIRM";
+            this.confirmbtn.UseVisualStyleBackColor = false;
+            this.confirmbtn.Click += new System.EventHandler(this.confirmbtn_Click);
             // 
             // panelcheckout
             // 
@@ -360,11 +393,12 @@
             this.panelBrowseContainer.MinimumSize = new System.Drawing.Size(226, 57);
             this.panelBrowseContainer.Name = "panelBrowseContainer";
             this.panelBrowseContainer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panelBrowseContainer.Size = new System.Drawing.Size(226, 57);
+            this.panelBrowseContainer.Size = new System.Drawing.Size(226, 281);
             this.panelBrowseContainer.TabIndex = 17;
             // 
             // buttonBrowse
             // 
+            this.buttonBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBrowse.Location = new System.Drawing.Point(3, 3);
             this.buttonBrowse.Name = "buttonBrowse";
             this.buttonBrowse.Size = new System.Drawing.Size(220, 50);
@@ -420,16 +454,6 @@
             this.timerBrowse.Interval = 10;
             this.timerBrowse.Tick += new System.EventHandler(this.timerBrowse_Tick);
             // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::shopix.Properties.Resources.shopping_cart;
-            this.pictureBox8.Location = new System.Drawing.Point(15, 19);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(48, 50);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 5;
-            this.pictureBox8.TabStop = false;
-            // 
             // hopeForm2
             // 
             this.hopeForm2.ControlBoxColorH = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
@@ -449,18 +473,6 @@
             this.hopeForm2.TabIndex = 4;
             this.hopeForm2.Text = "Shoppix";
             this.hopeForm2.ThemeColor = System.Drawing.Color.DarkSlateGray;
-            // 
-            // resetbtn
-            // 
-            this.resetbtn.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.resetbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.resetbtn.Location = new System.Drawing.Point(714, 72);
-            this.resetbtn.Name = "resetbtn";
-            this.resetbtn.Size = new System.Drawing.Size(220, 50);
-            this.resetbtn.TabIndex = 13;
-            this.resetbtn.Text = "RESET";
-            this.resetbtn.UseVisualStyleBackColor = false;
-            this.resetbtn.Click += new System.EventHandler(this.resetbtn_Click);
             // 
             // Form1
             // 
@@ -493,11 +505,11 @@
             this.panelCheckoutContainer.ResumeLayout(false);
             this.cartpanel.ResumeLayout(false);
             this.cartpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.mainpanel.ResumeLayout(false);
             this.panelcheckout.ResumeLayout(false);
             this.panelcheckout.PerformLayout();
             this.panelBrowseContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -513,7 +525,7 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Button button30;
+        private System.Windows.Forms.Button buttonClearAll;
         private System.Windows.Forms.Button buybtn;
         private System.Windows.Forms.Panel mainpanel;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
@@ -538,7 +550,7 @@
         private System.Windows.Forms.Label checkoutprice;
         private System.Windows.Forms.Label checkoutqty;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutCheckOut;
-        private System.Windows.Forms.Button resetbtn;
+        private System.Windows.Forms.Button confirmbtn;
     }
 }
 

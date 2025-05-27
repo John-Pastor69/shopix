@@ -45,6 +45,8 @@
             // panel2
             // 
             this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.price);
@@ -72,8 +74,8 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(217, 145);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(216, 144);
             this.label2.Margin = new System.Windows.Forms.Padding(3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 23);
@@ -132,12 +134,16 @@
             // 
             // btnAddCart
             // 
+            this.btnAddCart.BackColor = System.Drawing.Color.Red;
+            this.btnAddCart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCart.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAddCart.Location = new System.Drawing.Point(13, 132);
             this.btnAddCart.Name = "btnAddCart";
             this.btnAddCart.Size = new System.Drawing.Size(111, 38);
             this.btnAddCart.TabIndex = 3;
             this.btnAddCart.Text = "Add to Cart";
-            this.btnAddCart.UseVisualStyleBackColor = true;
+            this.btnAddCart.UseVisualStyleBackColor = false;
             this.btnAddCart.Click += new System.EventHandler(this.btnAddCart_Click);
             // 
             // btnMinus

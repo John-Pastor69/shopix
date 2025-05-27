@@ -121,23 +121,33 @@ namespace shopix
             flowLayoutPanel1.Hide();
             panel2.Hide();
             panelcheckout.Hide();
-            resetbtn.Hide();
+            confirmbtn.Hide();
+            ChangeButtonColor(buttonHome, Color.LightBlue);
         }
         
-        private void buttonHome_Click(object sender, EventArgs e)
+private void buttonHome_Click(object sender, EventArgs e)
         {
             mainpanel.Show();
             cartpanel.Hide();
             flowLayoutPanel1.Hide();
             panel2.Hide();
             panelcheckout.Hide();
+            confirmbtn.Hide();
 
+            // Change button color for Home  
+            ChangeButtonColor(buttonHome, Color.LightBlue);
+            ChangeButtonColor(buttonBrowse, SystemColors.Control);
+            ChangeButtonColor(buttonCheckout, SystemColors.Control);
         }
 
         private void buttonBrowse_Click_1(object sender, EventArgs e)
         {
-
             timerBrowse.Start();
+
+            // Change button color for Browse  
+            ChangeButtonColor(buttonBrowse, Color.LightBlue);
+            ChangeButtonColor(buttonHome, SystemColors.Control);
+            ChangeButtonColor(buttonCheckout, SystemColors.Control);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -157,9 +167,16 @@ namespace shopix
             flowLayoutPanel1.Hide();
             mainpanel.Show();
             panel2.Hide();
+            panelcheckout.Show();
+            confirmbtn.Show();
+
+            // Change button color for Checkout  
+            ChangeButtonColor(buttonCheckout, Color.LightBlue);
+            ChangeButtonColor(buttonHome, SystemColors.Control);
+            ChangeButtonColor(buttonBrowse, SystemColors.Control);
         }
 
-        private void button30_Click(object sender, EventArgs e)
+        private void buttonClearAll_Click(object sender, EventArgs e)
         {
             flowLayoutPanel2.Controls.Clear();
             flowLayoutCheckOut.Controls.Clear();
@@ -171,16 +188,30 @@ namespace shopix
         private void buybtn_Click(object sender, EventArgs e)
         {
             panelcheckout.Show();
-            resetbtn.Show();
-            flowLayoutPanel2.Controls.Clear();
-            TotalL.Hide();    
+            confirmbtn.Show();
+            // Simulate a button press on the checkout tab button  
+            buttonCheckout.PerformClick();
         }
 
-        private void resetbtn_Click(object sender, EventArgs e)
+        private void confirmbtn_Click(object sender, EventArgs e)
         {
             flowLayoutCheckOut.Controls.Clear();
             panelcheckout.Hide();
-            resetbtn.Hide();
+            confirmbtn.Hide();
+            flowLayoutPanel2.Controls.Clear();
+            TotalL.Hide();
         }
+
+        #region change button color method
+        // A method that changes the button's color when clicked
+        private void ChangeButtonColor(Button button, Color color)
+        {
+            if (button != null)
+            {
+                button.BackColor = color;
+            }
+        }
+        #endregion
+
     }
 }
