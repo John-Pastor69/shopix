@@ -26,13 +26,14 @@ namespace shopix.usercontrol
                 qty--;
                 quantity.Text = qty.ToString();
             }
-            else
+            if (qty == 0)
             {
                 // Remove this panel from the parent (i.e., the cart)
                 Form1 f = this.FindForm() as Form1;
                 if (f != null)
                 {
                     f.flowLayoutPanel2.Controls.Remove(this);
+                    f.UpdateTotalPrice();
                 }
             }
 
