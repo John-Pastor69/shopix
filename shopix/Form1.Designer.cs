@@ -41,6 +41,7 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.buybtn = new System.Windows.Forms.Button();
             this.buttonClearAll = new System.Windows.Forms.Button();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -64,17 +65,22 @@
             this.buttonGrainsandCereal = new System.Windows.Forms.Button();
             this.buttonDairy = new System.Windows.Forms.Button();
             this.timerBrowse = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.hopeForm2 = new ReaLTaiizor.Forms.HopeForm();
             this.buttonStart = new System.Windows.Forms.Button();
+            this.panelhome = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelHomeContainer.SuspendLayout();
             this.panelCheckoutContainer.SuspendLayout();
             this.cartpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.mainpanel.SuspendLayout();
             this.panelcheckout.SuspendLayout();
             this.panelBrowseContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panelhome.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -197,6 +203,15 @@
             this.buttonClearAll.Text = "Clear";
             this.buttonClearAll.UseVisualStyleBackColor = false;
             this.buttonClearAll.Click += new System.EventHandler(this.buttonClearAll_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Location = new System.Drawing.Point(15, 19);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(48, 50);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 5;
+            this.pictureBox8.TabStop = false;
             // 
             // label31
             // 
@@ -450,16 +465,6 @@
             this.timerBrowse.Interval = 10;
             this.timerBrowse.Tick += new System.EventHandler(this.timerBrowse_Tick);
             // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::shopix.Properties.Resources.shopping_cart;
-            this.pictureBox8.Location = new System.Drawing.Point(15, 19);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(48, 50);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 5;
-            this.pictureBox8.TabStop = false;
-            // 
             // hopeForm2
             // 
             this.hopeForm2.ControlBoxColorH = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(231)))), ((int)(((byte)(237)))));
@@ -494,6 +499,51 @@
             this.buttonStart.UseVisualStyleBackColor = false;
             this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click_1);
             // 
+            // panelhome
+            // 
+            this.panelhome.BackColor = System.Drawing.Color.Transparent;
+            this.panelhome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelhome.Controls.Add(this.panel3);
+            this.panelhome.Controls.Add(this.button1);
+            this.panelhome.Location = new System.Drawing.Point(244, 46);
+            this.panelhome.Name = "panelhome";
+            this.panelhome.Size = new System.Drawing.Size(1145, 757);
+            this.panelhome.TabIndex = 21;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.IndianRed;
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Location = new System.Drawing.Point(272, 173);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(541, 129);
+            this.panel3.TabIndex = 19;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Showcard Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.label6.Location = new System.Drawing.Point(20, 37);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(479, 50);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Welcome to Shoppix";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.ForestGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(420, 546);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(262, 74);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Start Shopping";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -501,6 +551,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1386, 805);
+            this.Controls.Add(this.panelhome);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelBrowseContainer);
@@ -525,11 +576,14 @@
             this.panelCheckoutContainer.ResumeLayout(false);
             this.cartpanel.ResumeLayout(false);
             this.cartpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.mainpanel.ResumeLayout(false);
             this.panelcheckout.ResumeLayout(false);
             this.panelcheckout.PerformLayout();
             this.panelBrowseContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.panelhome.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -572,6 +626,10 @@
         public System.Windows.Forms.FlowLayoutPanel flowLayoutCheckOut;
         private System.Windows.Forms.Button confirmbtn;
         private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.Panel panelhome;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button1;
     }
 }
 

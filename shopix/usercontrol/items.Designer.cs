@@ -58,7 +58,7 @@
             this.panel2.Controls.Add(this.btnMinus);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(357, 179);
+            this.panel2.Size = new System.Drawing.Size(345, 176);
             this.panel2.TabIndex = 9;
             // 
             // panel3
@@ -75,7 +75,7 @@
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(216, 144);
+            this.label2.Location = new System.Drawing.Point(210, 135);
             this.label2.Margin = new System.Windows.Forms.Padding(3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 23);
@@ -96,7 +96,7 @@
             // 
             this.btnPlus.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlus.Location = new System.Drawing.Point(273, 148);
+            this.btnPlus.Location = new System.Drawing.Point(266, 138);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(70, 20);
             this.btnPlus.TabIndex = 5;
@@ -150,7 +150,7 @@
             // 
             this.btnMinus.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinus.Location = new System.Drawing.Point(141, 148);
+            this.btnMinus.Location = new System.Drawing.Point(134, 138);
             this.btnMinus.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.btnMinus.Name = "btnMinus";
             this.btnMinus.Size = new System.Drawing.Size(70, 20);
@@ -165,7 +165,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
             this.Name = "items";
-            this.Size = new System.Drawing.Size(357, 179);
+            this.Size = new System.Drawing.Size(345, 176);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icon)).EndInit();

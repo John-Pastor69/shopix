@@ -1,16 +1,18 @@
-﻿using System;
+﻿using shopix.usercontrol;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using shopix.usercontrol;
 using System.Windows.Forms;
-using System.Runtime.CompilerServices;
-using System.Diagnostics;
-using System.Security.Cryptography;
 using System.Xml.Linq;
 
 namespace shopix
@@ -21,6 +23,59 @@ namespace shopix
         {
             InitializeComponent();
         }
+
+        #region Inserting data into DB
+
+        private void InsertProduct()
+        {
+            string consTring = "Data Source=LAPTOP-7VOGQI5Q\\SQLEXPRESS;Initial Catalog=DB_Shoppix;Integrated Security=True;TrustServerCertificate=True";
+
+            Image img = Properties.Resources.burnice;
+
+            // Convert image to byte[]
+            byte[] imgBytes;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                imgBytes = ms.ToArray();
+            }
+
+
+            // Insert into database
+            using (SqlConnection con = new SqlConnection(consTring))
+            {
+                string query = "INSERT INTO Product (Product_ID, Product, Price, Stock, Description, Image_pic, Category_ID) " +
+                               "VALUES (@Pid, @name, @price, @stock, @desc, @img, @cat)";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@Pid", 30);
+                cmd.Parameters.AddWithValue("@name", "La Serenísima Yogurt Drink");
+                cmd.Parameters.AddWithValue("@price", 67);
+                cmd.Parameters.AddWithValue("@stock", 100);
+                cmd.Parameters.AddWithValue("@desc", "Flavored yogurt drink imported from Argentina.");
+                cmd.Parameters.AddWithValue("@img", imgBytes);
+                cmd.Parameters.AddWithValue("@cat", 1);
+
+                /* •	Selecta Moo Chocolate Milk – Chocolate-flavored UHT milk, a popular kids’ drink. (₱25/200ml) 
+                   •	Dutch Mill Yogurt Drink – Probiotic milk drink with fruity flavors; good for digestion. (₱10/90ml) 
+                   •	Magnolia Gold Butter – Premium-quality dairy butter, ideal for baking and spreads. (₱170/225g) 
+                   •	Nestlé Cream – All-purpose cream used in Filipino salads and desserts. (₱60/250ml) 
+                   •	Arla Cream Cheese – Soft, spreadable cream cheese, great for baking and dips. (₱140/230g) 
+                   •	NESTLÉ Greek Yogurt – Thick and creamy yogurt, available in plain and flavored varieties. (₱50/100g) 
+                   7.	Kraft Eden Cheese – Filipino staple processed cheese block. (₱55/165g) 
+                   5.	La Serenísima Yogurt Drink – Flavored yogurt drink imported from Argentina. (₱35/200ml) 
+
+                  */
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                MessageBox.Show("Product saved with resource image.");
+            }
+        }
+
+        #endregion
 
         #region Update Total Price Method
 
@@ -92,33 +147,56 @@ namespace shopix
         #endregion
 
 
-        #region dynamic user control
-
-        private void dynamicControl()
+        #region
+        private void dynamicControl(int categoryId)
         {
             flowLayoutPanel1.Controls.Clear();
+            List<items> listItems = new List<items>();
 
-            items[] listItems = new items[5];
-
-            string[] titles = new string[5] { "camellya's armpit", "Vivian's nude", "Master shifu", "pyromaniac armpit", "summer chocolate", };
-            string[] descriptions = new string[5] { "some juicy shit", "im hard rn", "very powerful ally", "smells like nitro fuel", "this is a supposed child wtf", };
-            string[] price = new string[5] { "377.99", "739.99", "455.99", "599.99", "289.99", };
-            Image[] icons = new Image[5] { Properties.Resources.camellya, Properties.Resources.vivian, Properties.Resources.master, Properties.Resources.burnice, Properties.Resources.iori };
-
-            for (int i = 0; i < listItems.Length; i++)
+            using (SqlConnection con = new SqlConnection("Data Source=LAPTOP-7VOGQI5Q\\SQLEXPRESS;Initial Catalog=DB_Shoppix;Integrated Security=True;TrustServerCertificate=True"))
             {
-                //store control object on list array
-                listItems[i] = new items();
+                string query = "SELECT Product, Description, Price, Image_pic FROM Product WHERE Category_ID = @Category_ID";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@Category_ID", categoryId);
 
-                listItems[i].Name = titles[i];
-                listItems[i].Desc = descriptions[i];
-                listItems[i].Price = price[i];
-                listItems[i].Icon = icons[i];
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
 
-                flowLayoutPanel1.Controls.Add(listItems[i]);
+                while (reader.Read())
+                {
+                    items itemControl = new items();
+
+                    itemControl.Name = reader["Product"].ToString();
+                    itemControl.Desc = reader["Description"].ToString();
+                    itemControl.Price = reader["Price"].ToString();
+
+                    if (reader["Image_pic"] != DBNull.Value)
+                    {
+                        byte[] imgBytes = (byte[])reader["Image_pic"];
+                        using (MemoryStream ms = new MemoryStream(imgBytes))
+                        {
+                            itemControl.Icon = Image.FromStream(ms);
+                        }
+                    }
+
+                    listItems.Add(itemControl);
+                }
+
+                con.Close();
+
+                for (int i = 0; i < listItems.Count; i++)
+                {
+                    flowLayoutPanel1.Controls.Add(listItems[i]);
+                }
+
             }
-
         }
+
+
+
+        #endregion
+
+
         public void CartItem_ItemRemoved(object sender, EventArgs e)
         {
             panelcart removedItem = sender as panelcart;
@@ -137,11 +215,11 @@ namespace shopix
                 }
             }
         }
-        #endregion
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            mainpanel.Show();
+            panelhome.Show();
+            mainpanel.Hide();
             cartpanel.Hide();
             flowLayoutPanel1.Hide();
             panel2.Hide();
@@ -164,7 +242,8 @@ namespace shopix
         // Update your main navigation button handlers to reset category colors
         private void buttonHome_Click(object sender, EventArgs e) // Home button
         {
-            mainpanel.Show();
+            panelhome.Show();
+            mainpanel.Hide();
             cartpanel.Hide();
             flowLayoutPanel1.Hide();
             panel2.Hide();
@@ -180,6 +259,7 @@ namespace shopix
 
         private void buttonCheckout_Click(object sender, EventArgs e) // Checkout button
         {
+            panelhome.Hide();
             buttonStart.Hide();
             cartpanel.Hide();
             flowLayoutPanel1.Hide();
@@ -196,6 +276,7 @@ namespace shopix
 
         private void buttonBrowse_Click_1(object sender, EventArgs e) // Browse button
         {
+            panelhome.Hide();
             buttonStart.Hide();
             panelcheckout.Hide();
             buttonBrowse.Show();
@@ -228,49 +309,53 @@ namespace shopix
 
         private void buttonCanGoods_Click(object sender, EventArgs e) // Can Goods button
         {
+            panelhome.Hide();
             mainpanel.Hide();
             buttonStart.Hide();
             cartpanel.Show();
             flowLayoutPanel1.Show();
             panel2.Show();
 
-            dynamicControl();
+            dynamicControl(2);
             ChangeCategoryButtonColor(buttonCanGoods);
         }
 
         private void buttonSnack_Click(object sender, EventArgs e) // Snack button
         {
+            panelhome.Hide();
             mainpanel.Hide();
             buttonStart.Hide();
             cartpanel.Show();
             flowLayoutPanel1.Show();
             panel2.Show();
 
-            dynamicControl();
+            dynamicControl(3);
             ChangeCategoryButtonColor(buttonSnack);
         }
 
         private void buttonGrainsandCereal_Click(object sender, EventArgs e) // Grains and Cereal button
         {
+            panelhome.Hide();
             mainpanel.Hide();
             buttonStart.Hide();
             cartpanel.Show();
             flowLayoutPanel1.Show();
             panel2.Show();
 
-            dynamicControl();
+            dynamicControl(4);
             ChangeCategoryButtonColor(buttonGrainsandCereal);
         }
 
         private void buttonDairy_Click(object sender, EventArgs e) // Dairy button
         {
+            panelhome.Hide();
             mainpanel.Hide();
             buttonStart.Hide();
             cartpanel.Show();
             flowLayoutPanel1.Show();
             panel2.Show();
 
-            dynamicControl();
+            dynamicControl(1);
             ChangeCategoryButtonColor(buttonDairy);
         }
         #endregion
@@ -322,6 +407,9 @@ namespace shopix
             buttonBrowse.PerformClick();    
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            buttonBrowse.PerformClick();
+        }
     }
 }
