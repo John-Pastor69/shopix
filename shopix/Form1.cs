@@ -56,6 +56,13 @@ namespace shopix
         #region browse panel expand/collapse
 
         bool BrowseExpand;
+
+        public void ShowBrowsePanel()
+        {
+            buttonBrowse_Click_1(this, EventArgs.Empty);
+        }
+
+
         private void timerBrowse_Tick(object sender, EventArgs e)
         {
             if (BrowseExpand)  //if BrowseExpand is true, expand the panel
@@ -83,6 +90,7 @@ namespace shopix
 
 
         #endregion
+
 
         #region dynamic user control
 
@@ -129,8 +137,6 @@ namespace shopix
                 }
             }
         }
-
-
         #endregion
 
         private void Form1_Load(object sender, EventArgs e)
@@ -141,11 +147,22 @@ namespace shopix
             panel2.Hide();
             panelcheckout.Hide();
             confirmbtn.Hide();
-            ChangeButtonColor(buttonHome, Color.LightBlue);
 
+            // Corrected: Use the ChangeButtonColor method from the Form1 class
+            ChangeButtonColor(buttonHome, Color.LightBlue);
         }
-        
-private void buttonHome_Click(object sender, EventArgs e)
+        #region Products category Buttons
+        // Add this helper method to your class
+        private void ResetCategoryButtonColors()
+        {
+            ChangeButtonColor(buttonCanGoods, SystemColors.Control);
+            ChangeButtonColor(buttonSnack, SystemColors.Control);
+            ChangeButtonColor(buttonGrainsandCereal, SystemColors.Control);
+            ChangeButtonColor(buttonDairy, SystemColors.Control);
+        }
+
+        // Update your main navigation button handlers to reset category colors
+        private void buttonHome_Click(object sender, EventArgs e) // Home button
         {
             mainpanel.Show();
             cartpanel.Hide();
@@ -153,36 +170,17 @@ private void buttonHome_Click(object sender, EventArgs e)
             panel2.Hide();
             panelcheckout.Hide();
             confirmbtn.Hide();
+            buttonStart.Show();
 
-            // Change button color for Home button  
             ChangeButtonColor(buttonHome, Color.LightBlue);
             ChangeButtonColor(buttonBrowse, SystemColors.Control);
             ChangeButtonColor(buttonCheckout, SystemColors.Control);
+            ResetCategoryButtonColors();
         }
 
-        private void buttonBrowse_Click_1(object sender, EventArgs e)
+        private void buttonCheckout_Click(object sender, EventArgs e) // Checkout button
         {
-            timerBrowse.Start();
-
-            // Change button color for Browse button  
-            ChangeButtonColor(buttonBrowse, Color.LightBlue);
-            ChangeButtonColor(buttonHome, SystemColors.Control);
-            ChangeButtonColor(buttonCheckout, SystemColors.Control);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            mainpanel.Hide();
-            
-            cartpanel.Show();
-            flowLayoutPanel1.Show();
-            panel2.Show();
-
-            dynamicControl();
-        }
-
-        private void buttonCheckout_Click(object sender, EventArgs e)
-        {
+            buttonStart.Hide();
             cartpanel.Hide();
             flowLayoutPanel1.Hide();
             mainpanel.Show();
@@ -190,13 +188,94 @@ private void buttonHome_Click(object sender, EventArgs e)
             panelcheckout.Show();
             confirmbtn.Show();
 
-            // Change button color for Checkout button  
             ChangeButtonColor(buttonCheckout, Color.LightBlue);
             ChangeButtonColor(buttonHome, SystemColors.Control);
             ChangeButtonColor(buttonBrowse, SystemColors.Control);
+            ResetCategoryButtonColors(); 
         }
 
-        private void buttonClearAll_Click(object sender, EventArgs e)
+        private void buttonBrowse_Click_1(object sender, EventArgs e) // Browse button
+        {
+            buttonStart.Hide();
+            panelcheckout.Hide();
+            buttonBrowse.Show();
+            timerBrowse.Start();
+            buttonCanGoods.PerformClick();
+
+            // Change button color for Browse button  
+            ChangeButtonColor(buttonBrowse, Color.LightBlue);
+            ChangeButtonColor(buttonHome, SystemColors.Control);
+            ChangeButtonColor(buttonCheckout, SystemColors.Control);
+        }
+
+        private void ChangeCategoryButtonColor(Button activeButton) // Method to change the color of the active category button
+        {
+            // Reset all category buttons to default color
+            ChangeButtonColor(buttonCanGoods, SystemColors.Control);
+            ChangeButtonColor(buttonSnack, SystemColors.Control);
+            ChangeButtonColor(buttonGrainsandCereal, SystemColors.Control);
+            ChangeButtonColor(buttonDairy, SystemColors.Control);
+
+            // Set the active button to highlighted color
+            ChangeButtonColor(activeButton, Color.LightBlue);
+
+            // Also highlight the Browse button
+            ChangeButtonColor(buttonBrowse, Color.LightBlue);
+            // Reset Home and Checkout buttons
+            ChangeButtonColor(buttonHome, SystemColors.Control);
+            ChangeButtonColor(buttonCheckout, SystemColors.Control);
+        }
+
+        private void buttonCanGoods_Click(object sender, EventArgs e) // Can Goods button
+        {
+            mainpanel.Hide();
+            buttonStart.Hide();
+            cartpanel.Show();
+            flowLayoutPanel1.Show();
+            panel2.Show();
+
+            dynamicControl();
+            ChangeCategoryButtonColor(buttonCanGoods);
+        }
+
+        private void buttonSnack_Click(object sender, EventArgs e) // Snack button
+        {
+            mainpanel.Hide();
+            buttonStart.Hide();
+            cartpanel.Show();
+            flowLayoutPanel1.Show();
+            panel2.Show();
+
+            dynamicControl();
+            ChangeCategoryButtonColor(buttonSnack);
+        }
+
+        private void buttonGrainsandCereal_Click(object sender, EventArgs e) // Grains and Cereal button
+        {
+            mainpanel.Hide();
+            buttonStart.Hide();
+            cartpanel.Show();
+            flowLayoutPanel1.Show();
+            panel2.Show();
+
+            dynamicControl();
+            ChangeCategoryButtonColor(buttonGrainsandCereal);
+        }
+
+        private void buttonDairy_Click(object sender, EventArgs e) // Dairy button
+        {
+            mainpanel.Hide();
+            buttonStart.Hide();
+            cartpanel.Show();
+            flowLayoutPanel1.Show();
+            panel2.Show();
+
+            dynamicControl();
+            ChangeCategoryButtonColor(buttonDairy);
+        }
+        #endregion
+                
+        private void buttonClearAll_Click(object sender, EventArgs e) // Clear all button
         {
             flowLayoutPanel2.Controls.Clear();
             flowLayoutCheckOut.Controls.Clear();
@@ -205,7 +284,7 @@ private void buttonHome_Click(object sender, EventArgs e)
             UpdateTotalPrice();
         }
 
-        private void buybtn_Click(object sender, EventArgs e)
+        private void buybtn_Click(object sender, EventArgs e) //BUY button
         {
             panelcheckout.Show();
             TotalL.Show();
@@ -217,20 +296,17 @@ private void buttonHome_Click(object sender, EventArgs e)
         private void confirmbtn_Click(object sender, EventArgs e)
         {
             flowLayoutCheckOut.Controls.Clear();
-            panelcheckout.Hide();
-            confirmbtn.Hide();
+            this.confirmbtn.Hide(); // Ensure 'confirmbtn' is a member of the Form1 class  
             flowLayoutPanel2.Controls.Clear();
             TotalL.Hide();
 
-
-            //mag shoshow sana ng bagong panel na confimed reciept na
-
-            //panelcheckout2.Show();
-            //flowLayoutCheckOut2.Show();
-            //subtotal2.Show();   
+            // Placeholder for showing a new panel for confirmed receipt  
+            // panelcheckout2.Show();  
+            // flowLayoutCheckOut2.Show();  
+            // subtotal2.Show();  
         }
 
-        #region change button color method
+        
         // A method that changes the button's color when clicked
         private void ChangeButtonColor(Button button, Color color)
         {
@@ -239,6 +315,13 @@ private void buttonHome_Click(object sender, EventArgs e)
                 button.BackColor = color;
             }
         }
-        #endregion
+
+
+        private void buttonStart_Click_1(object sender, EventArgs e)
+        {
+            buttonBrowse.PerformClick();    
+        }
+
+        
     }
 }

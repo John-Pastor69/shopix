@@ -12,9 +12,12 @@ namespace shopix.usercontrol
 {
     public partial class home : UserControl
     {
+        private Button buttonBrowse; // Declare the buttonBrowse field  
+
         public home()
         {
             InitializeComponent();
         }
     }
 }
+

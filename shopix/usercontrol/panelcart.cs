@@ -33,7 +33,7 @@ namespace shopix.usercontrol
         }
 
         [Category("Custom Props")]
-        public string iQuantity // Corrected property name
+        public string iQuantity 
         {
             get { return pcquantity; }
             set { pcquantity = value; quantity.Text = value; }

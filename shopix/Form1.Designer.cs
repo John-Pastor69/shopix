@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelHomeContainer = new System.Windows.Forms.Panel();
             this.buttonHome = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.buybtn = new System.Windows.Forms.Button();
             this.buttonClearAll = new System.Windows.Forms.Button();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -59,20 +59,22 @@
             this.confirmbtn = new System.Windows.Forms.Button();
             this.panelBrowseContainer = new System.Windows.Forms.Panel();
             this.buttonBrowse = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.buttonCanGoods = new System.Windows.Forms.Button();
+            this.buttonSnack = new System.Windows.Forms.Button();
+            this.buttonGrainsandCereal = new System.Windows.Forms.Button();
+            this.buttonDairy = new System.Windows.Forms.Button();
             this.timerBrowse = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.hopeForm2 = new ReaLTaiizor.Forms.HopeForm();
+            this.buttonStart = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelHomeContainer.SuspendLayout();
             this.panelCheckoutContainer.SuspendLayout();
             this.cartpanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.mainpanel.SuspendLayout();
             this.panelcheckout.SuspendLayout();
             this.panelBrowseContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -195,16 +197,6 @@
             this.buttonClearAll.Text = "Clear";
             this.buttonClearAll.UseVisualStyleBackColor = false;
             this.buttonClearAll.Click += new System.EventHandler(this.buttonClearAll_Click);
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::shopix.Properties.Resources.shopping_cart;
-            this.pictureBox8.Location = new System.Drawing.Point(15, 19);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(48, 50);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 5;
-            this.pictureBox8.TabStop = false;
             // 
             // label31
             // 
@@ -385,16 +377,16 @@
             // panelBrowseContainer
             // 
             this.panelBrowseContainer.Controls.Add(this.buttonBrowse);
-            this.panelBrowseContainer.Controls.Add(this.button3);
-            this.panelBrowseContainer.Controls.Add(this.button4);
-            this.panelBrowseContainer.Controls.Add(this.button5);
-            this.panelBrowseContainer.Controls.Add(this.button6);
+            this.panelBrowseContainer.Controls.Add(this.buttonCanGoods);
+            this.panelBrowseContainer.Controls.Add(this.buttonSnack);
+            this.panelBrowseContainer.Controls.Add(this.buttonGrainsandCereal);
+            this.panelBrowseContainer.Controls.Add(this.buttonDairy);
             this.panelBrowseContainer.Location = new System.Drawing.Point(12, 117);
             this.panelBrowseContainer.MaximumSize = new System.Drawing.Size(226, 281);
             this.panelBrowseContainer.MinimumSize = new System.Drawing.Size(226, 57);
             this.panelBrowseContainer.Name = "panelBrowseContainer";
             this.panelBrowseContainer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panelBrowseContainer.Size = new System.Drawing.Size(226, 57);
+            this.panelBrowseContainer.Size = new System.Drawing.Size(226, 281);
             this.panelBrowseContainer.TabIndex = 17;
             // 
             // buttonBrowse
@@ -408,52 +400,65 @@
             this.buttonBrowse.UseVisualStyleBackColor = true;
             this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click_1);
             // 
-            // button3
+            // buttonCanGoods
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button3.Location = new System.Drawing.Point(3, 59);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(220, 50);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonCanGoods.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonCanGoods.Location = new System.Drawing.Point(3, 59);
+            this.buttonCanGoods.Name = "buttonCanGoods";
+            this.buttonCanGoods.Size = new System.Drawing.Size(220, 50);
+            this.buttonCanGoods.TabIndex = 13;
+            this.buttonCanGoods.Text = "Can Goods";
+            this.buttonCanGoods.UseVisualStyleBackColor = false;
+            this.buttonCanGoods.Click += new System.EventHandler(this.buttonCanGoods_Click);
             // 
-            // button4
+            // buttonSnack
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button4.Location = new System.Drawing.Point(3, 115);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(220, 50);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = false;
+            this.buttonSnack.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonSnack.Location = new System.Drawing.Point(3, 115);
+            this.buttonSnack.Name = "buttonSnack";
+            this.buttonSnack.Size = new System.Drawing.Size(220, 50);
+            this.buttonSnack.TabIndex = 14;
+            this.buttonSnack.Text = "Snack";
+            this.buttonSnack.UseVisualStyleBackColor = false;
+            this.buttonSnack.Click += new System.EventHandler(this.buttonSnack_Click);
             // 
-            // button5
+            // buttonGrainsandCereal
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button5.Location = new System.Drawing.Point(3, 171);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(220, 50);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = false;
+            this.buttonGrainsandCereal.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonGrainsandCereal.Location = new System.Drawing.Point(3, 171);
+            this.buttonGrainsandCereal.Name = "buttonGrainsandCereal";
+            this.buttonGrainsandCereal.Size = new System.Drawing.Size(220, 50);
+            this.buttonGrainsandCereal.TabIndex = 15;
+            this.buttonGrainsandCereal.Text = "Grains and Cereal";
+            this.buttonGrainsandCereal.UseVisualStyleBackColor = false;
+            this.buttonGrainsandCereal.Click += new System.EventHandler(this.buttonGrainsandCereal_Click);
             // 
-            // button6
+            // buttonDairy
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button6.Location = new System.Drawing.Point(3, 227);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(220, 50);
-            this.button6.TabIndex = 16;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = false;
+            this.buttonDairy.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonDairy.Location = new System.Drawing.Point(3, 227);
+            this.buttonDairy.Name = "buttonDairy";
+            this.buttonDairy.Size = new System.Drawing.Size(220, 50);
+            this.buttonDairy.TabIndex = 16;
+            this.buttonDairy.Text = "Dairy Products";
+            this.buttonDairy.UseVisualStyleBackColor = false;
+            this.buttonDairy.Click += new System.EventHandler(this.buttonDairy_Click);
             // 
             // timerBrowse
             // 
             this.timerBrowse.Enabled = true;
             this.timerBrowse.Interval = 10;
             this.timerBrowse.Tick += new System.EventHandler(this.timerBrowse_Tick);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::shopix.Properties.Resources.shopping_cart;
+            this.pictureBox8.Location = new System.Drawing.Point(15, 19);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(48, 50);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 5;
+            this.pictureBox8.TabStop = false;
             // 
             // hopeForm2
             // 
@@ -464,7 +469,7 @@
             this.hopeForm2.Dock = System.Windows.Forms.DockStyle.Top;
             this.hopeForm2.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hopeForm2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
-            this.hopeForm2.Image = global::shopix.Properties.Resources.Shoppixlogotransparent;
+            this.hopeForm2.Image = ((System.Drawing.Image)(resources.GetObject("hopeForm2.Image")));
             this.hopeForm2.ImeMode = System.Windows.Forms.ImeMode.On;
             this.hopeForm2.Location = new System.Drawing.Point(0, 0);
             this.hopeForm2.MaximizeBox = false;
@@ -475,6 +480,20 @@
             this.hopeForm2.Text = "Shoppix";
             this.hopeForm2.ThemeColor = System.Drawing.Color.DarkSlateGray;
             // 
+            // buttonStart
+            // 
+            this.buttonStart.BackColor = System.Drawing.Color.ForestGreen;
+            this.buttonStart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStart.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.buttonStart.Location = new System.Drawing.Point(583, 377);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(220, 50);
+            this.buttonStart.TabIndex = 18;
+            this.buttonStart.Text = "Start Shopping";
+            this.buttonStart.UseVisualStyleBackColor = false;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -482,6 +501,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1386, 805);
+            this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelBrowseContainer);
             this.Controls.Add(this.cartpanel);
@@ -505,11 +525,11 @@
             this.panelCheckoutContainer.ResumeLayout(false);
             this.cartpanel.ResumeLayout(false);
             this.cartpanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.mainpanel.ResumeLayout(false);
             this.panelcheckout.ResumeLayout(false);
             this.panelcheckout.PerformLayout();
             this.panelBrowseContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -533,10 +553,10 @@
         private System.Windows.Forms.Panel panelCheckoutContainer;
         private System.Windows.Forms.Panel panelBrowseContainer;
         private System.Windows.Forms.Button buttonBrowse;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonCanGoods;
+        private System.Windows.Forms.Button buttonSnack;
+        private System.Windows.Forms.Button buttonGrainsandCereal;
+        private System.Windows.Forms.Button buttonDairy;
         private System.Windows.Forms.Timer timerBrowse;
         public System.Windows.Forms.Label TotalL;
         private System.Windows.Forms.Panel panelcheckout;
@@ -551,6 +571,7 @@
         private System.Windows.Forms.Label checkoutqty;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutCheckOut;
         private System.Windows.Forms.Button confirmbtn;
+        private System.Windows.Forms.Button buttonStart;
     }
 }
 
