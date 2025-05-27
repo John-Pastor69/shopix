@@ -464,7 +464,7 @@
             this.hopeForm2.Dock = System.Windows.Forms.DockStyle.Top;
             this.hopeForm2.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hopeForm2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
-            this.hopeForm2.Image = global::shopix.Properties.Resources.Shoppix_logo_transparent;
+            this.hopeForm2.Image = global::shopix.Properties.Resources.Shoppixlogotransparent;
             this.hopeForm2.ImeMode = System.Windows.Forms.ImeMode.On;
             this.hopeForm2.Location = new System.Drawing.Point(0, 0);
             this.hopeForm2.MaximizeBox = false;

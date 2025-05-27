@@ -163,6 +163,16 @@ namespace shopix.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Shoppixlogotransparent {
+            get {
+                object obj = ResourceManager.GetObject("Shoppixlogotransparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap spark {
             get {
                 object obj = ResourceManager.GetObject("spark", resourceCulture);
