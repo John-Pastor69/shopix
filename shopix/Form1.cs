@@ -22,43 +22,7 @@ namespace shopix
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            mainpanel.Show();
-            cartpanel.Hide();
-            flowLayoutPanel1.Hide();
-            panel2.Hide();
-            panelcheckout.Hide();
-            label7.Hide();
-        }
-        
-
-        private void buttonHome_Click(object sender, EventArgs e)
-        {
-            mainpanel.Show();
-            cartpanel.Hide();
-            flowLayoutPanel1.Hide();
-            panel2.Hide();
-            panelcheckout.Hide();
-            label7.Hide();
-
-        }
-        private void buttonBrowse_Click_1(object sender, EventArgs e)
-        {
-
-            timerBrowse.Start();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            mainpanel.Hide();
-            
-            cartpanel.Show();
-            flowLayoutPanel1.Show();
-            panel2.Show();
-
-            dynamicControl();
-        }
+        #region Update Total Price Method
 
         public void UpdateTotalPrice()
         {
@@ -82,7 +46,14 @@ namespace shopix
                 }
             }
             TotalL.Text = ": ₱" + total.ToString("0.00");
+            subtotal.Text = ": ₱" + total.ToString("0.00");
+
         }
+
+
+        #endregion
+
+        #region browse panel expand/collapse
 
         bool BrowseExpand;
         private void timerBrowse_Tick(object sender, EventArgs e)
@@ -106,22 +77,15 @@ namespace shopix
                 }
             }
             // Move the panel below to follow the expanding/collapsing panel
-            
+
             panelCheckoutContainer.Top = panelBrowseContainer.Bottom - 45;
         }
-        
-
-        private void buttonCheckout_Click(object sender, EventArgs e)
-        {
-            cartpanel.Hide();
-            flowLayoutPanel1.Hide();
-            mainpanel.Show();
-            panel2.Hide();
-            label7.Show();
-        }
 
 
-        //dynamic user control
+        #endregion
+
+        #region dynamic user control
+
         private void dynamicControl()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -131,7 +95,7 @@ namespace shopix
             string[] titles = new string[5] { "camellya's armpit", "Vivian's nude", "Master shifu", "pyromaniac armpit", "summer chocolate", };
             string[] descriptions = new string[5] { "some juicy shit", "im hard rn", "very powerful ally", "smells like nitro fuel", "this is a supposed child wtf", };
             string[] price = new string[5] { "377.99", "739.99", "455.99", "599.99", "289.99", };
-            Image[] icons = new Image[5] { Properties.Resources.camellya, Properties.Resources.me, Properties.Resources.menu, Properties.Resources.burnice, Properties.Resources.shopping_cart };
+            Image[] icons = new Image[5] { Properties.Resources.camellya, Properties.Resources.vivian, Properties.Resources.master, Properties.Resources.burnice, Properties.Resources.iori };
 
             for (int i = 0; i < listItems.Length; i++)
             {
@@ -148,10 +112,58 @@ namespace shopix
 
         }
 
+        #endregion
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            mainpanel.Show();
+            cartpanel.Hide();
+            flowLayoutPanel1.Hide();
+            panel2.Hide();
+            panelcheckout.Hide();
+            resetbtn.Hide();
+        }
+        
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            mainpanel.Show();
+            cartpanel.Hide();
+            flowLayoutPanel1.Hide();
+            panel2.Hide();
+            panelcheckout.Hide();
+
+        }
+
+        private void buttonBrowse_Click_1(object sender, EventArgs e)
+        {
+
+            timerBrowse.Start();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            mainpanel.Hide();
+            
+            cartpanel.Show();
+            flowLayoutPanel1.Show();
+            panel2.Show();
+
+            dynamicControl();
+        }
+
+        private void buttonCheckout_Click(object sender, EventArgs e)
+        {
+            cartpanel.Hide();
+            flowLayoutPanel1.Hide();
+            mainpanel.Show();
+            panel2.Hide();
+        }
+
         private void button30_Click(object sender, EventArgs e)
         {
             flowLayoutPanel2.Controls.Clear();
-
+            flowLayoutCheckOut.Controls.Clear();
+            TotalL.Hide();
             // Reset the total price
             UpdateTotalPrice();
         }
@@ -159,6 +171,16 @@ namespace shopix
         private void buybtn_Click(object sender, EventArgs e)
         {
             panelcheckout.Show();
+            resetbtn.Show();
+            flowLayoutPanel2.Controls.Clear();
+            TotalL.Hide();    
+        }
+
+        private void resetbtn_Click(object sender, EventArgs e)
+        {
+            flowLayoutCheckOut.Controls.Clear();
+            panelcheckout.Hide();
+            resetbtn.Hide();
         }
     }
 }

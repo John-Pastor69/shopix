@@ -17,35 +17,7 @@ namespace shopix.usercontrol
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int qty = Convert.ToInt32(quantity.Text);
-
-            if (qty >= 1)
-            {
-                qty--;
-                quantity.Text = qty.ToString();
-            }
-            if (qty == 0)
-            {
-                // Remove this panel from the parent (i.e., the cart)
-                Form1 f = this.FindForm() as Form1;
-                if (f != null)
-                {
-                    f.flowLayoutPanel2.Controls.Remove(this);
-                    f.UpdateTotalPrice();
-                }
-            }
-
-            // Always update total price after quantity change or removal
-            Form1 form = this.FindForm() as Form1;
-            if (form != null)
-            {
-                form.UpdateTotalPrice();
-            }
-        }
-
-        // Properties for the icon, name, description, and price
+        #region Properties for the icon, name, description, and price
 
         private string pcname;
         private string pcquantity;
@@ -75,6 +47,36 @@ namespace shopix.usercontrol
             set { pcprice = value; price.Text = value; }
         }
 
-        
+
+        #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int qty = Convert.ToInt32(quantity.Text);
+
+            if (qty >= 1)
+            {
+                qty--;
+                quantity.Text = qty.ToString();
+            }
+            if (qty == 0)
+            {
+                // Remove this panel from the parent (i.e., the cart)
+                Form1 f = this.FindForm() as Form1;
+                if (f != null)
+                {
+                    f.flowLayoutPanel2.Controls.Remove(this);
+                    f.UpdateTotalPrice();
+                }
+            }
+
+            // Always update total price after quantity change or removal
+            Form1 form = this.FindForm() as Form1;
+            if (form != null)
+            {
+                form.UpdateTotalPrice();
+            }
+        }
+
     }
 }

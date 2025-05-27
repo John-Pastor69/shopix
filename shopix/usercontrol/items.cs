@@ -22,7 +22,7 @@ namespace shopix.usercontrol
             InitializeComponent();
         }
 
-        // Properties for the icon, name, description, and price
+        #region Properties for the icon, name, description, and price
 
         private Image _icon;
         private string _name;
@@ -59,47 +59,10 @@ namespace shopix.usercontrol
             set { _price = value; price.Text = value; }
         }
 
-        // Quantity math
 
-        int q = 1;
-        bool mClick = false;
+        #endregion
 
-        private void btnMinus_Click_1(object sender, EventArgs e)
-        {
-            if (!mClick)
-            {
-                mClick = true;
-                // if q is equal to 1, output is 1 else, continue to minus
-                if (q == 1)
-                {
-                    int i = 1;
-                    string myString2 = i.ToString();
-                    label2.Text = myString2;
-                    mClick = false;
-                }
-                else
-                {
-                    q = q - 1;
-                    string myString = q.ToString();
-                    label2.Text = myString;
-                    mClick = false;
-                }
-            }
-        }
-
-        private void btnPlus_Click_1(object sender, EventArgs e)
-        {
-            if (!mClick)
-            {
-                mClick = true;
-                q = q + 1;
-                string myString = q.ToString();
-                label2.Text = myString;
-                mClick = false;
-            }
-        }
-
-        //dynamic control
+        //Add to Cart Logic
 
         Form1 f = new Form1();
         panelcart pc = new panelcart();
@@ -190,8 +153,49 @@ namespace shopix.usercontrol
 
                 // Update the total price after adding new panel
                 f.UpdateTotalPrice();
+            }
+            f.TotalL.Show();    
+        }
 
+        // Quantity math buttons
+
+        int q = 1;
+        bool mClick = false;
+
+        private void btnMinus_Click_1(object sender, EventArgs e)
+        {
+            if (!mClick)
+            {
+                mClick = true;
+                // if q is equal to 1, output is 1 else, continue to minus
+                if (q == 1)
+                {
+                    int i = 1;
+                    string myString2 = i.ToString();
+                    label2.Text = myString2;
+                    mClick = false;
+                }
+                else
+                {
+                    q = q - 1;
+                    string myString = q.ToString();
+                    label2.Text = myString;
+                    mClick = false;
+                }
             }
         }
+
+        private void btnPlus_Click_1(object sender, EventArgs e)
+        {
+            if (!mClick)
+            {
+                mClick = true;
+                q = q + 1;
+                string myString = q.ToString();
+                label2.Text = myString;
+                mClick = false;
+            }
+        }
+        
     }
 }

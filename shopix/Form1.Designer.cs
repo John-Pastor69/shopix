@@ -44,6 +44,16 @@
             this.label30 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.mainpanel = new System.Windows.Forms.Panel();
+            this.panelcheckout = new System.Windows.Forms.Panel();
+            this.checkoutname = new System.Windows.Forms.Label();
+            this.checkoutprice = new System.Windows.Forms.Label();
+            this.checkoutqty = new System.Windows.Forms.Label();
+            this.subtotal = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutCheckOut = new System.Windows.Forms.FlowLayoutPanel();
             this.panelBrowseContainer = new System.Windows.Forms.Panel();
             this.buttonBrowse = new System.Windows.Forms.Button();
@@ -54,25 +64,15 @@
             this.timerBrowse = new System.Windows.Forms.Timer(this.components);
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.hopeForm2 = new ReaLTaiizor.Forms.HopeForm();
-            this.panelcheckout = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.checkoutqty = new System.Windows.Forms.Label();
-            this.checkoutprice = new System.Windows.Forms.Label();
-            this.checkoutname = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.resetbtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelHomeContainer.SuspendLayout();
             this.panelCheckoutContainer.SuspendLayout();
             this.cartpanel.SuspendLayout();
             this.mainpanel.SuspendLayout();
+            this.panelcheckout.SuspendLayout();
             this.panelBrowseContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.panelcheckout.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -152,9 +152,8 @@
             this.TotalL.ForeColor = System.Drawing.Color.Yellow;
             this.TotalL.Location = new System.Drawing.Point(40, 666);
             this.TotalL.Name = "TotalL";
-            this.TotalL.Size = new System.Drawing.Size(65, 32);
+            this.TotalL.Size = new System.Drawing.Size(0, 32);
             this.TotalL.TabIndex = 13;
-            this.TotalL.Text = "$$$";
             // 
             // flowLayoutPanel2
             // 
@@ -223,12 +222,123 @@
             // mainpanel
             // 
             this.mainpanel.BackColor = System.Drawing.Color.White;
-            this.mainpanel.Controls.Add(this.label7);
+            this.mainpanel.Controls.Add(this.resetbtn);
             this.mainpanel.Controls.Add(this.panelcheckout);
             this.mainpanel.Location = new System.Drawing.Point(254, 58);
             this.mainpanel.Name = "mainpanel";
             this.mainpanel.Size = new System.Drawing.Size(1120, 735);
             this.mainpanel.TabIndex = 9;
+            // 
+            // panelcheckout
+            // 
+            this.panelcheckout.BackColor = System.Drawing.Color.Gold;
+            this.panelcheckout.Controls.Add(this.checkoutname);
+            this.panelcheckout.Controls.Add(this.checkoutprice);
+            this.panelcheckout.Controls.Add(this.checkoutqty);
+            this.panelcheckout.Controls.Add(this.subtotal);
+            this.panelcheckout.Controls.Add(this.label5);
+            this.panelcheckout.Controls.Add(this.label4);
+            this.panelcheckout.Controls.Add(this.label3);
+            this.panelcheckout.Controls.Add(this.label2);
+            this.panelcheckout.Controls.Add(this.label1);
+            this.panelcheckout.Controls.Add(this.flowLayoutCheckOut);
+            this.panelcheckout.Location = new System.Drawing.Point(118, 3);
+            this.panelcheckout.Name = "panelcheckout";
+            this.panelcheckout.Size = new System.Drawing.Size(366, 729);
+            this.panelcheckout.TabIndex = 1;
+            // 
+            // checkoutname
+            // 
+            this.checkoutname.AutoSize = true;
+            this.checkoutname.Location = new System.Drawing.Point(9, 59);
+            this.checkoutname.Name = "checkoutname";
+            this.checkoutname.Size = new System.Drawing.Size(41, 16);
+            this.checkoutname.TabIndex = 9;
+            this.checkoutname.Text = "name";
+            // 
+            // checkoutprice
+            // 
+            this.checkoutprice.AutoSize = true;
+            this.checkoutprice.Location = new System.Drawing.Point(323, 61);
+            this.checkoutprice.Name = "checkoutprice";
+            this.checkoutprice.Size = new System.Drawing.Size(37, 16);
+            this.checkoutprice.TabIndex = 3;
+            this.checkoutprice.Text = "price";
+            // 
+            // checkoutqty
+            // 
+            this.checkoutqty.AutoSize = true;
+            this.checkoutqty.Location = new System.Drawing.Point(215, 61);
+            this.checkoutqty.Name = "checkoutqty";
+            this.checkoutqty.Size = new System.Drawing.Size(25, 16);
+            this.checkoutqty.TabIndex = 8;
+            this.checkoutqty.Text = "qty";
+            // 
+            // subtotal
+            // 
+            this.subtotal.AutoSize = true;
+            this.subtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtotal.ForeColor = System.Drawing.Color.White;
+            this.subtotal.Location = new System.Drawing.Point(228, 615);
+            this.subtotal.Name = "subtotal";
+            this.subtotal.Size = new System.Drawing.Size(48, 25);
+            this.subtotal.TabIndex = 7;
+            this.subtotal.Text = "$$$";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(3, 562);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(357, 36);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "::::::::::::::::::::::::::::::::::::::";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(6, 77);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(357, 36);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "::::::::::::::::::::::::::::::::::::::";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(6, 609);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(145, 32);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Sub Total";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(111, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 32);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "RECEIPT";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(81, 676);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(195, 32);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "THANK YOU!";
             // 
             // flowLayoutCheckOut
             // 
@@ -340,126 +450,17 @@
             this.hopeForm2.Text = "Shoppix";
             this.hopeForm2.ThemeColor = System.Drawing.Color.DarkSlateGray;
             // 
-            // panelcheckout
+            // resetbtn
             // 
-            this.panelcheckout.BackColor = System.Drawing.Color.Gold;
-            this.panelcheckout.Controls.Add(this.checkoutname);
-            this.panelcheckout.Controls.Add(this.checkoutprice);
-            this.panelcheckout.Controls.Add(this.checkoutqty);
-            this.panelcheckout.Controls.Add(this.label6);
-            this.panelcheckout.Controls.Add(this.label5);
-            this.panelcheckout.Controls.Add(this.label4);
-            this.panelcheckout.Controls.Add(this.label3);
-            this.panelcheckout.Controls.Add(this.label2);
-            this.panelcheckout.Controls.Add(this.label1);
-            this.panelcheckout.Controls.Add(this.flowLayoutCheckOut);
-            this.panelcheckout.Location = new System.Drawing.Point(118, 3);
-            this.panelcheckout.Name = "panelcheckout";
-            this.panelcheckout.Size = new System.Drawing.Size(366, 729);
-            this.panelcheckout.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(81, 676);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 32);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "THANK YOU!";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(111, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 32);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "RECEIPT";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(6, 609);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 32);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Sub Total";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(6, 77);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(357, 36);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "::::::::::::::::::::::::::::::::::::::";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 562);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(357, 36);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "::::::::::::::::::::::::::::::::::::::";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(257, 609);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 32);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "$$$";
-            // 
-            // checkoutqty
-            // 
-            this.checkoutqty.AutoSize = true;
-            this.checkoutqty.Location = new System.Drawing.Point(215, 61);
-            this.checkoutqty.Name = "checkoutqty";
-            this.checkoutqty.Size = new System.Drawing.Size(25, 16);
-            this.checkoutqty.TabIndex = 8;
-            this.checkoutqty.Text = "qty";
-            // 
-            // checkoutprice
-            // 
-            this.checkoutprice.AutoSize = true;
-            this.checkoutprice.Location = new System.Drawing.Point(323, 61);
-            this.checkoutprice.Name = "checkoutprice";
-            this.checkoutprice.Size = new System.Drawing.Size(37, 16);
-            this.checkoutprice.TabIndex = 3;
-            this.checkoutprice.Text = "price";
-            // 
-            // checkoutname
-            // 
-            this.checkoutname.AutoSize = true;
-            this.checkoutname.Location = new System.Drawing.Point(9, 59);
-            this.checkoutname.Name = "checkoutname";
-            this.checkoutname.Size = new System.Drawing.Size(41, 16);
-            this.checkoutname.TabIndex = 9;
-            this.checkoutname.Text = "name";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(573, 94);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(471, 91);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "NO ITEM :<";
+            this.resetbtn.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.resetbtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resetbtn.Location = new System.Drawing.Point(714, 72);
+            this.resetbtn.Name = "resetbtn";
+            this.resetbtn.Size = new System.Drawing.Size(220, 50);
+            this.resetbtn.TabIndex = 13;
+            this.resetbtn.Text = "RESET";
+            this.resetbtn.UseVisualStyleBackColor = false;
+            this.resetbtn.Click += new System.EventHandler(this.resetbtn_Click);
             // 
             // Form1
             // 
@@ -468,13 +469,13 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1386, 805);
-            this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.panelBrowseContainer);
             this.Controls.Add(this.cartpanel);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.hopeForm2);
+            this.Controls.Add(this.mainpanel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -493,11 +494,10 @@
             this.cartpanel.ResumeLayout(false);
             this.cartpanel.PerformLayout();
             this.mainpanel.ResumeLayout(false);
-            this.mainpanel.PerformLayout();
-            this.panelBrowseContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panelcheckout.ResumeLayout(false);
             this.panelcheckout.PerformLayout();
+            this.panelBrowseContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -531,14 +531,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label subtotal;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label checkoutname;
         private System.Windows.Forms.Label checkoutprice;
         private System.Windows.Forms.Label checkoutqty;
-        private System.Windows.Forms.Label label7;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutCheckOut;
+        private System.Windows.Forms.Button resetbtn;
     }
 }
 
