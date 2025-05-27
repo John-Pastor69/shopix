@@ -123,8 +123,6 @@ namespace shopix
             panelcheckout.Hide();
             confirmbtn.Hide();
             ChangeButtonColor(buttonHome, Color.LightBlue);
-            //label1.Hide();
-            panelcheckout2.Hide();
 
         }
         
