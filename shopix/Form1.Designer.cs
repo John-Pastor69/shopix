@@ -52,6 +52,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.timerBrowse = new System.Windows.Forms.Timer(this.components);
+            this.TotalL = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelHomeContainer.SuspendLayout();
             this.panelCheckoutContainer.SuspendLayout();
@@ -118,6 +119,7 @@
             // cartpanel
             // 
             this.cartpanel.BackColor = System.Drawing.Color.DarkCyan;
+            this.cartpanel.Controls.Add(this.TotalL);
             this.cartpanel.Controls.Add(this.flowLayoutPanel2);
             this.cartpanel.Controls.Add(this.button31);
             this.cartpanel.Controls.Add(this.button30);
@@ -158,6 +160,7 @@
             this.button30.TabIndex = 9;
             this.button30.Text = "Clear All";
             this.button30.UseVisualStyleBackColor = true;
+            this.button30.Click += new System.EventHandler(this.button30_Click);
             // 
             // pictureBox8
             // 
@@ -183,10 +186,10 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(21, 663);
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(12, 646);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(106, 42);
+            this.label30.Size = new System.Drawing.Size(51, 20);
             this.label30.TabIndex = 3;
             this.label30.Text = "Total";
             // 
@@ -300,6 +303,17 @@
             this.timerBrowse.Interval = 10;
             this.timerBrowse.Tick += new System.EventHandler(this.timerBrowse_Tick);
             // 
+            // TotalL
+            // 
+            this.TotalL.AutoSize = true;
+            this.TotalL.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalL.ForeColor = System.Drawing.Color.Yellow;
+            this.TotalL.Location = new System.Drawing.Point(40, 666);
+            this.TotalL.Name = "TotalL";
+            this.TotalL.Size = new System.Drawing.Size(65, 32);
+            this.TotalL.TabIndex = 13;
+            this.TotalL.Text = "$$$";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -361,6 +375,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Timer timerBrowse;
+        public System.Windows.Forms.Label TotalL;
     }
 }
 

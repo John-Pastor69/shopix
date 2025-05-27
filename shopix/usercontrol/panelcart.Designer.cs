@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.price = new System.Windows.Forms.Label();
             this.quantity = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
@@ -37,18 +38,32 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.price);
             this.panel1.Controls.Add(this.quantity);
             this.panel1.Controls.Add(this.name);
-            this.panel1.Location = new System.Drawing.Point(3, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(348, 47);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Salmon;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Yellow;
+            this.button1.Location = new System.Drawing.Point(307, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(41, 41);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "-";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // price
             // 
             this.price.AutoSize = true;
-            this.price.Location = new System.Drawing.Point(295, 15);
+            this.price.Location = new System.Drawing.Point(245, 15);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(37, 16);
             this.price.TabIndex = 2;
@@ -78,7 +93,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "panelcart";
-            this.Size = new System.Drawing.Size(354, 47);
+            this.Size = new System.Drawing.Size(348, 47);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -87,9 +102,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.Label name;
+        public System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.Label price;
         public System.Windows.Forms.Label quantity;
+        public System.Windows.Forms.Label name;
     }
 }

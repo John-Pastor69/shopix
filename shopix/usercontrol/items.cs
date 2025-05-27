@@ -103,60 +103,59 @@ namespace shopix.usercontrol
 
         Form1 f = new Form1();
         panelcart pc = new panelcart();
-        private void dynamicControl()
-        {
-            // no quantity yet
-
-            // store items to cart
-            
-
-        }
 
         private void btnAddCart_Click(object sender, EventArgs e)
         {
+            Form1 f = this.FindForm() as Form1;
+            if (f == null) return;
 
+            bool itemExists = false;
 
-            // store to setter in panelcart
-            pc.iName = _name;
-            pc.Price = _price;
-
-            panelcart[] a = new panelcart[1];
-
-
-            // store to array
-            //string[] Name = new string[1] { pc.name.Text };
-            //string[] price = new string[1] { pc.price.Text };
-
-            string[] Name = new string[1] { pc.iName };
-            string[] price = new string[1] { pc.Price };
-            string[] quantity = new string[1] { "v" };
-
-
-
-            // loop to flowlayout2
-
-            /*
-            for (int c = 0; c < a.Length; c++)
+            for (int i = 0; i < f.flowLayoutPanel2.Controls.Count; i++)
             {
-                //store control object on list array
-                a[c] = new panelcart();
+                Control ctrl = f.flowLayoutPanel2.Controls[i];
+                if (ctrl is panelcart)
+                {
+                    panelcart existingPanel = (panelcart)ctrl;
 
-                a[c].name.Text = Name[c];
-                a[c].price.Text = price[c];
+                    if (existingPanel.iName == _name)
+                    {
+                        int oldQty = Convert.ToInt32(existingPanel.quantity.Text);
+                        int newQty = oldQty + q;
+                        existingPanel.quantity.Text = newQty.ToString();
 
-                
+                        //Computes Total
+
+                        f.UpdateTotalPrice();
+
+                        itemExists = true;
+                        break;
+                    }
+                }
             }
-            */
 
-            pc1.Visible = true;
-            f.flowLayoutPanel2.Controls.Add(pc1); {
-                
+
+
+            if (!itemExists)
+            {
+
+                panelcart pc1 = new panelcart();
+
+                pc1.iName = _name;
+                pc1.iPrice = _price;
+                pc1.iQauntity = q.ToString();
+
+                pc1.name.Text = _name;
+                pc1.price.Text = _price;
+                pc1.quantity.Text = q.ToString();
+
+                pc1.Visible = true;
+                f.flowLayoutPanel2.Controls.Add(pc1);
+
+                // Update the total price after adding new panel
+                f.UpdateTotalPrice();
+
             }
-
-
-            MessageBox.Show(pc.name.Text);
-            MessageBox.Show(pc.price.Text);
-
         }
     }
 }

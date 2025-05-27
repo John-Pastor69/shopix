@@ -40,14 +40,45 @@ namespace shopix
         }
         private void buttonBrowse_Click_1(object sender, EventArgs e)
         {
-            mainpanel.Hide();
+
             timerBrowse.Start();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            mainpanel.Hide();
+            
             cartpanel.Show();
             flowLayoutPanel1.Show();
             panel2.Show();
 
             dynamicControl();
         }
+
+        public void UpdateTotalPrice()
+        {
+            decimal total = 0;
+
+            for (int i = 0; i < flowLayoutPanel2.Controls.Count; i++)
+            {
+                Control ctrl = flowLayoutPanel2.Controls[i];
+                if (ctrl is shopix.usercontrol.panelcart)
+                {
+                    shopix.usercontrol.panelcart cartItem = (shopix.usercontrol.panelcart)ctrl;
+
+                    decimal price = 0;
+                    int qty = 0;
+
+                    // Safely parse price and quantity
+                    decimal.TryParse(cartItem.price.Text, out price);
+                    int.TryParse(cartItem.quantity.Text, out qty);
+
+                    total += price * qty;
+                }
+            }
+            TotalL.Text = ": ₱" + total.ToString("0.00");
+        }
+
         bool BrowseExpand;
         private void timerBrowse_Tick(object sender, EventArgs e)
         {
@@ -111,14 +142,12 @@ namespace shopix
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button30_Click(object sender, EventArgs e)
         {
+            flowLayoutPanel2.Controls.Clear();
 
+            // Reset the total price
+            UpdateTotalPrice();
         }
-       
-
-
-
-
     }
 }
