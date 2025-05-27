@@ -134,7 +134,7 @@ private void buttonHome_Click(object sender, EventArgs e)
             panelcheckout.Hide();
             confirmbtn.Hide();
 
-            // Change button color for Home  
+            // Change button color for Home button  
             ChangeButtonColor(buttonHome, Color.LightBlue);
             ChangeButtonColor(buttonBrowse, SystemColors.Control);
             ChangeButtonColor(buttonCheckout, SystemColors.Control);
@@ -144,7 +144,7 @@ private void buttonHome_Click(object sender, EventArgs e)
         {
             timerBrowse.Start();
 
-            // Change button color for Browse  
+            // Change button color for Browse button  
             ChangeButtonColor(buttonBrowse, Color.LightBlue);
             ChangeButtonColor(buttonHome, SystemColors.Control);
             ChangeButtonColor(buttonCheckout, SystemColors.Control);
@@ -170,7 +170,7 @@ private void buttonHome_Click(object sender, EventArgs e)
             panelcheckout.Show();
             confirmbtn.Show();
 
-            // Change button color for Checkout  
+            // Change button color for Checkout button  
             ChangeButtonColor(buttonCheckout, Color.LightBlue);
             ChangeButtonColor(buttonHome, SystemColors.Control);
             ChangeButtonColor(buttonBrowse, SystemColors.Control);
@@ -188,6 +188,7 @@ private void buttonHome_Click(object sender, EventArgs e)
         private void buybtn_Click(object sender, EventArgs e)
         {
             panelcheckout.Show();
+            TotalL.Show();
             confirmbtn.Show();
             // Simulate a button press on the checkout tab button  
             buttonCheckout.PerformClick();
@@ -212,6 +213,5 @@ private void buttonHome_Click(object sender, EventArgs e)
             }
         }
         #endregion
-
     }
 }

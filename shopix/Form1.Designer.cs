@@ -127,7 +127,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.panel2.Location = new System.Drawing.Point(254, 58);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(730, 735);
             this.panel2.TabIndex = 7;
@@ -151,7 +151,7 @@
             // 
             this.TotalL.AutoSize = true;
             this.TotalL.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalL.ForeColor = System.Drawing.Color.Yellow;
+            this.TotalL.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.TotalL.Location = new System.Drawing.Point(40, 666);
             this.TotalL.Name = "TotalL";
             this.TotalL.Size = new System.Drawing.Size(0, 32);
@@ -241,8 +241,9 @@
             // mainpanel
             // 
             this.mainpanel.BackColor = System.Drawing.Color.White;
-            this.mainpanel.Controls.Add(this.confirmbtn);
+            this.mainpanel.Controls.Add(this.panel2);
             this.mainpanel.Controls.Add(this.panelcheckout);
+            this.mainpanel.Controls.Add(this.confirmbtn);
             this.mainpanel.Location = new System.Drawing.Point(254, 58);
             this.mainpanel.Name = "mainpanel";
             this.mainpanel.Size = new System.Drawing.Size(1120, 735);
@@ -264,7 +265,7 @@
             // 
             // panelcheckout
             // 
-            this.panelcheckout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panelcheckout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panelcheckout.Controls.Add(this.checkoutname);
             this.panelcheckout.Controls.Add(this.checkoutprice);
             this.panelcheckout.Controls.Add(this.checkoutqty);
@@ -275,7 +276,7 @@
             this.panelcheckout.Controls.Add(this.label2);
             this.panelcheckout.Controls.Add(this.label1);
             this.panelcheckout.Controls.Add(this.flowLayoutCheckOut);
-            this.panelcheckout.Location = new System.Drawing.Point(214, 0);
+            this.panelcheckout.Location = new System.Drawing.Point(215, 0);
             this.panelcheckout.Name = "panelcheckout";
             this.panelcheckout.Size = new System.Drawing.Size(366, 729);
             this.panelcheckout.TabIndex = 1;
@@ -481,10 +482,9 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1386, 805);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelBrowseContainer);
             this.Controls.Add(this.cartpanel);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.hopeForm2);
             this.Controls.Add(this.mainpanel);
