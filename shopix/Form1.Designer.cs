@@ -386,7 +386,7 @@
             this.panelBrowseContainer.MinimumSize = new System.Drawing.Size(226, 57);
             this.panelBrowseContainer.Name = "panelBrowseContainer";
             this.panelBrowseContainer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panelBrowseContainer.Size = new System.Drawing.Size(226, 281);
+            this.panelBrowseContainer.Size = new System.Drawing.Size(226, 57);
             this.panelBrowseContainer.TabIndex = 17;
             // 
             // buttonBrowse
