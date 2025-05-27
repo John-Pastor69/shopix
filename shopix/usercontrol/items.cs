@@ -103,6 +103,7 @@ namespace shopix.usercontrol
 
         Form1 f = new Form1();
         panelcart pc = new panelcart();
+        checkoutpanel cp = new checkoutpanel();
 
         private void btnAddCart_Click(object sender, EventArgs e)
         {
@@ -134,13 +135,36 @@ namespace shopix.usercontrol
                 }
             }
 
+            for (int i = 0; i < f.flowLayoutCheckOut.Controls.Count; i++)
+            {
+                Control ctrl = f.flowLayoutCheckOut.Controls[i];
+                if (ctrl is checkoutpanel)
+                {
+                    checkoutpanel existingPanel = (checkoutpanel)ctrl;
 
+                    if (existingPanel.cName == _name)
+                    {
+                        int oldQty = Convert.ToInt32(existingPanel.qtyCP.Text);
+                        int newQty = oldQty + q;
+                        existingPanel.qtyCP.Text = newQty.ToString();
+
+                        //Computes Total
+
+                        f.UpdateTotalPrice();
+
+                        itemExists = true;
+                        break;
+                    }
+                }
+            }
 
             if (!itemExists)
             {
 
                 panelcart pc1 = new panelcart();
+                checkoutpanel pc2 = new checkoutpanel();
 
+                //pc1
                 pc1.iName = _name;
                 pc1.iPrice = _price;
                 pc1.iQauntity = q.ToString();
@@ -151,6 +175,18 @@ namespace shopix.usercontrol
 
                 pc1.Visible = true;
                 f.flowLayoutPanel2.Controls.Add(pc1);
+
+                //pc2
+                pc2.cName = _name;
+                pc2.cPrice = _price;
+                pc2.cQauntity = q.ToString();
+
+                pc2.nameCP.Text = _name;
+                pc2.priceCP.Text = _price;
+                pc2.qtyCP.Text = q.ToString();
+
+                pc2.Visible = true;
+                f.flowLayoutCheckOut.Controls.Add(pc2);
 
                 // Update the total price after adding new panel
                 f.UpdateTotalPrice();

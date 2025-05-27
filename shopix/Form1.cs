@@ -28,6 +28,8 @@ namespace shopix
             cartpanel.Hide();
             flowLayoutPanel1.Hide();
             panel2.Hide();
+            panelcheckout.Hide();
+            label7.Hide();
         }
         
 
@@ -37,6 +39,9 @@ namespace shopix
             cartpanel.Hide();
             flowLayoutPanel1.Hide();
             panel2.Hide();
+            panelcheckout.Hide();
+            label7.Hide();
+
         }
         private void buttonBrowse_Click_1(object sender, EventArgs e)
         {
@@ -112,6 +117,7 @@ namespace shopix
             flowLayoutPanel1.Hide();
             mainpanel.Show();
             panel2.Hide();
+            label7.Show();
         }
 
 
@@ -148,6 +154,11 @@ namespace shopix
 
             // Reset the total price
             UpdateTotalPrice();
+        }
+
+        private void buybtn_Click(object sender, EventArgs e)
+        {
+            panelcheckout.Show();
         }
     }
 }

@@ -129,6 +129,12 @@
     <Compile Include="usercontrol\checkout.Designer.cs">
       <DependentUpon>checkout.cs</DependentUpon>
     </Compile>
+    <Compile Include="usercontrol\checkoutpanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usercontrol\checkoutpanel.Designer.cs">
+      <DependentUpon>checkoutpanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="usercontrol\home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </Compile>
     <EmbeddedResource Include="usercontrol\checkout.resx">
       <DependentUpon>checkout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrol\checkoutpanel.resx">
+      <DependentUpon>checkoutpanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="usercontrol\home.resx">
       <DependentUpon>home.cs</DependentUpon>
