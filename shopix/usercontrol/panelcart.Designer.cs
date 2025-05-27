@@ -63,7 +63,7 @@
             // price
             // 
             this.price.AutoSize = true;
-            this.price.Location = new System.Drawing.Point(245, 15);
+            this.price.Location = new System.Drawing.Point(254, 15);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(37, 16);
             this.price.TabIndex = 2;
@@ -72,7 +72,7 @@
             // quantity
             // 
             this.quantity.AutoSize = true;
-            this.quantity.Location = new System.Drawing.Point(111, 15);
+            this.quantity.Location = new System.Drawing.Point(186, 15);
             this.quantity.Name = "quantity";
             this.quantity.Size = new System.Drawing.Size(53, 16);
             this.quantity.TabIndex = 1;

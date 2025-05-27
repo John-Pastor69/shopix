@@ -58,6 +58,7 @@ namespace shopix.usercontrol
             {
                 qty--;
                 quantity.Text = qty.ToString();
+
             }
             if (qty == 0)
             {

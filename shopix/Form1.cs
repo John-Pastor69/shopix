@@ -123,6 +123,9 @@ namespace shopix
             panelcheckout.Hide();
             confirmbtn.Hide();
             ChangeButtonColor(buttonHome, Color.LightBlue);
+            //label1.Hide();
+            panelcheckout2.Hide();
+
         }
         
 private void buttonHome_Click(object sender, EventArgs e)
@@ -201,6 +204,13 @@ private void buttonHome_Click(object sender, EventArgs e)
             confirmbtn.Hide();
             flowLayoutPanel2.Controls.Clear();
             TotalL.Hide();
+
+
+            //mag shoshow sana ng bagong panel na confimed reciept na
+
+            //panelcheckout2.Show();
+            //flowLayoutCheckOut2.Show();
+            //subtotal2.Show();   
         }
 
         #region change button color method
