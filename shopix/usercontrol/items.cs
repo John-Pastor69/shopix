@@ -30,8 +30,10 @@ namespace shopix.usercontrol
 
         private Image _icon;
         private string _name;
-        private string _description;
+        private string _quantity;
         private string _price;
+        private string _description;
+      
 
         [Category("Custom Props")]
 
@@ -50,6 +52,7 @@ namespace shopix.usercontrol
         }
 
         [Category("Custom Props")]
+
 
         public string Desc
         {
@@ -78,14 +81,14 @@ namespace shopix.usercontrol
                 {
                     int i = 1;
                     string myString2 = i.ToString();
-                    Quantitylabel.Text = myString2;
+                    Items_Quantitylabel.Text = myString2;
                     mClick = false;
                 }
                 else
                 {
                     q = q - 1;
                     string myString = q.ToString();
-                    Quantitylabel.Text = myString;
+                    Items_Quantitylabel.Text = myString;
                     mClick = false;
                 }
             }
@@ -98,7 +101,7 @@ namespace shopix.usercontrol
                 mClick = true;
                 q = q + 1;
                 string myString = q.ToString();
-                Quantitylabel.Text = myString;
+                Items_Quantitylabel.Text = myString;
                 mClick = false;
             }
         }
@@ -132,28 +135,45 @@ namespace shopix.usercontrol
                         int newQty = oldQty + q;
                         existingPanel.quantity.Text = newQty.ToString();
 
+                        //Computes Total
+
+                        f.UpdateTotalPrice();
+
                         itemExists = true;
                         break;
                     }
                 }
             }
 
+            
+
             if (!itemExists)
             {
+
                 panelcart pc1 = new panelcart();
 
                 pc1.iName = _name;
-                pc1.Price = _price;
-                pc1.quantity.Text = q.ToString();
+                pc1.iPrice = _price;
+                pc1.iQauntity = q.ToString();
 
                 pc1.name.Text = _name;
                 pc1.price.Text = _price;
+                pc1.quantity.Text = q.ToString();
+
+                pc1.Visible = true;
+                f.flowLayoutPanel2.Controls.Add(pc1);
+
+                // Update the total price after adding new panel
+                f.UpdateTotalPrice();
+
+               
 
                 // add total price calculation
 
+                /*
                 List<double> list = new List<double>();
 
-                double priceValue = Convert.ToDouble(pc1.Price);
+                double priceValue = Convert.ToDouble(pc1.iPrice);
                 list.Add(priceValue);
 
                 foreach (double i in list)
@@ -163,7 +183,7 @@ namespace shopix.usercontrol
                         foreach (double i2 in list)
                         {
                             priceValue += i;
-                            f.label1.Text = priceValue.ToString();
+                           
 
                             pc1.Visible = true;
                             f.flowLayoutPanel2.Controls.Add(pc1);
@@ -175,13 +195,14 @@ namespace shopix.usercontrol
 
                         foreach (double i3 in list)
                         {
-                            f.label1.Text = priceValue.ToString();
+                          
 
                             pc1.Visible = true;
                             f.flowLayoutPanel2.Controls.Add(pc1);
                         }
                     }
-                }
+                */
+                
                 
             }
 

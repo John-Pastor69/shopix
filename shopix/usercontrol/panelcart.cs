@@ -24,20 +24,26 @@ namespace shopix.usercontrol
         {
             int qty = Convert.ToInt32(quantity.Text);
 
-            qty--;
-
-            if (qty <= 0)
+            if (qty >= 1)
             {
-                // Remove this panel from the flow layout panel
-                FlowLayoutPanel parent = this.Parent as FlowLayoutPanel;
-                if (parent != null)
-                {
-                    parent.Controls.Remove(this);
-                }
+                qty--;
+                quantity.Text = qty.ToString();
             }
             else
             {
-                quantity.Text = qty.ToString();
+                // Remove this panel from the parent (i.e., the cart)
+                Form1 f = this.FindForm() as Form1;
+                if (f != null)
+                {
+                    f.flowLayoutPanel2.Controls.Remove(this);
+                }
+            }
+
+            // Always update total price after quantity change or removal
+            Form1 form = this.FindForm() as Form1;
+            if (form != null)
+            {
+                form.UpdateTotalPrice();
             }
         }
 
@@ -60,7 +66,7 @@ namespace shopix.usercontrol
 
         [Category("Custom Props")]
 
-        public string Qauntity
+        public string iQauntity
         {
             get { return pcquantity; }
             set { pcquantity = value; quantity.Text = value; }
@@ -68,7 +74,7 @@ namespace shopix.usercontrol
 
         [Category("Custom Props")]
 
-        public string Price
+        public string iPrice
         {
             get { return pcprice; }
             set { pcprice = value; price.Text = value; }
@@ -79,6 +85,9 @@ namespace shopix.usercontrol
 
         }
 
-       
+        private void quantity_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

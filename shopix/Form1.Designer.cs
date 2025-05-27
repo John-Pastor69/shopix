@@ -40,16 +40,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cartpanel = new System.Windows.Forms.Panel();
+            this.TotalL = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.button31 = new System.Windows.Forms.Button();
             this.button30 = new System.Windows.Forms.Button();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.TotalLabel = new System.Windows.Forms.Label();
+            this.Total = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.mainpanel = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.hopeForm2 = new ReaLTaiizor.Forms.HopeForm();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.cartpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -100,7 +100,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(226, 50);
             this.button6.TabIndex = 11;
-            this.button6.Text = "button6";
+            this.button6.Text = "Category 4";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // button5
@@ -111,7 +111,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(226, 50);
             this.button5.TabIndex = 10;
-            this.button5.Text = "button5";
+            this.button5.Text = "Category 2";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button4
@@ -122,7 +122,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(226, 50);
             this.button4.TabIndex = 9;
-            this.button4.Text = "button4";
+            this.button4.Text = "Category 3";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -133,7 +133,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(226, 50);
             this.button3.TabIndex = 8;
-            this.button3.Text = "button3";
+            this.button3.Text = "category 1";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -172,17 +172,29 @@
             // cartpanel
             // 
             this.cartpanel.BackColor = System.Drawing.Color.DarkCyan;
-            this.cartpanel.Controls.Add(this.label1);
+            this.cartpanel.Controls.Add(this.TotalL);
             this.cartpanel.Controls.Add(this.flowLayoutPanel2);
             this.cartpanel.Controls.Add(this.button31);
             this.cartpanel.Controls.Add(this.button30);
             this.cartpanel.Controls.Add(this.pictureBox8);
             this.cartpanel.Controls.Add(this.label31);
-            this.cartpanel.Controls.Add(this.TotalLabel);
+            this.cartpanel.Controls.Add(this.Total);
             this.cartpanel.Location = new System.Drawing.Point(1014, 58);
             this.cartpanel.Name = "cartpanel";
             this.cartpanel.Size = new System.Drawing.Size(360, 735);
             this.cartpanel.TabIndex = 8;
+            // 
+            // TotalL
+            // 
+            this.TotalL.AutoSize = true;
+            this.TotalL.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalL.ForeColor = System.Drawing.Color.Yellow;
+            this.TotalL.Location = new System.Drawing.Point(22, 673);
+            this.TotalL.Name = "TotalL";
+            this.TotalL.Size = new System.Drawing.Size(65, 32);
+            this.TotalL.TabIndex = 12;
+            this.TotalL.Text = "$$$";
+            this.TotalL.Click += new System.EventHandler(this.label1_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -216,6 +228,16 @@
             this.button30.UseVisualStyleBackColor = true;
             this.button30.Click += new System.EventHandler(this.button30_Click);
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::shopix.Properties.Resources.master;
+            this.pictureBox8.Location = new System.Drawing.Point(15, 19);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(48, 50);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 5;
+            this.pictureBox8.TabStop = false;
+            // 
             // label31
             // 
             this.label31.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -227,15 +249,15 @@
             this.label31.TabIndex = 4;
             this.label31.Text = "Cart";
             // 
-            // TotalLabel
+            // Total
             // 
-            this.TotalLabel.AutoSize = true;
-            this.TotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalLabel.Location = new System.Drawing.Point(6, 651);
-            this.TotalLabel.Name = "TotalLabel";
-            this.TotalLabel.Size = new System.Drawing.Size(57, 20);
-            this.TotalLabel.TabIndex = 3;
-            this.TotalLabel.Text = "Total:";
+            this.Total.AutoSize = true;
+            this.Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Total.Location = new System.Drawing.Point(6, 644);
+            this.Total.Name = "Total";
+            this.Total.Size = new System.Drawing.Size(57, 20);
+            this.Total.TabIndex = 3;
+            this.Total.Text = "Total:";
             // 
             // flowLayoutPanel1
             // 
@@ -254,16 +276,6 @@
             this.mainpanel.Name = "mainpanel";
             this.mainpanel.Size = new System.Drawing.Size(1120, 735);
             this.mainpanel.TabIndex = 9;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::shopix.Properties.Resources.master;
-            this.pictureBox8.Location = new System.Drawing.Point(15, 19);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(48, 50);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 5;
-            this.pictureBox8.TabStop = false;
             // 
             // hopeForm2
             // 
@@ -284,17 +296,6 @@
             this.hopeForm2.TabIndex = 4;
             this.hopeForm2.Text = "Shoppix";
             this.hopeForm2.ThemeColor = System.Drawing.Color.DarkSlateGray;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(70, 662);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 32);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "$$$";
             // 
             // Form1
             // 
@@ -349,8 +350,8 @@
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Panel mainpanel;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        public System.Windows.Forms.Label TotalLabel;
-        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label Total;
+        public System.Windows.Forms.Label TotalL;
     }
 }
 
