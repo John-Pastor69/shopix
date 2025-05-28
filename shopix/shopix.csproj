@@ -154,6 +154,12 @@
     <Compile Include="usercontrol\panelcart.Designer.cs">
       <DependentUpon>panelcart.cs</DependentUpon>
     </Compile>
+    <Compile Include="usercontrol\Reciept.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usercontrol\Reciept.Designer.cs">
+      <DependentUpon>Reciept.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="usercontrol\panelcart.resx">
       <DependentUpon>panelcart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrol\Reciept.resx">
+      <DependentUpon>Reciept.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

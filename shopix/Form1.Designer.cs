@@ -55,7 +55,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutCheckOut = new System.Windows.Forms.FlowLayoutPanel();
             this.confirmbtn = new System.Windows.Forms.Button();
             this.panelBrowseContainer = new System.Windows.Forms.Panel();
@@ -71,6 +70,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.confirmpanel = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelHomeContainer.SuspendLayout();
             this.panelCheckoutContainer.SuspendLayout();
@@ -81,6 +83,7 @@
             this.panelBrowseContainer.SuspendLayout();
             this.panelhome.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.confirmpanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -247,10 +250,11 @@
             // 
             // mainpanel
             // 
-            this.mainpanel.BackColor = System.Drawing.Color.White;
-            this.mainpanel.Controls.Add(this.panel2);
+            this.mainpanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.mainpanel.Controls.Add(this.confirmpanel);
             this.mainpanel.Controls.Add(this.panelcheckout);
             this.mainpanel.Controls.Add(this.confirmbtn);
+            this.mainpanel.Controls.Add(this.panel2);
             this.mainpanel.Location = new System.Drawing.Point(254, 58);
             this.mainpanel.Name = "mainpanel";
             this.mainpanel.Size = new System.Drawing.Size(1120, 735);
@@ -267,7 +271,6 @@
             this.panelcheckout.Controls.Add(this.label4);
             this.panelcheckout.Controls.Add(this.label3);
             this.panelcheckout.Controls.Add(this.label2);
-            this.panelcheckout.Controls.Add(this.label1);
             this.panelcheckout.Controls.Add(this.flowLayoutCheckOut);
             this.panelcheckout.Location = new System.Drawing.Point(215, 0);
             this.panelcheckout.Name = "panelcheckout";
@@ -304,13 +307,12 @@
             // subtotal
             // 
             this.subtotal.AutoSize = true;
-            this.subtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subtotal.ForeColor = System.Drawing.Color.Black;
-            this.subtotal.Location = new System.Drawing.Point(228, 615);
+            this.subtotal.Location = new System.Drawing.Point(124, 646);
             this.subtotal.Name = "subtotal";
-            this.subtotal.Size = new System.Drawing.Size(48, 25);
+            this.subtotal.Size = new System.Drawing.Size(0, 36);
             this.subtotal.TabIndex = 7;
-            this.subtotal.Text = "$$$";
             // 
             // label5
             // 
@@ -352,20 +354,9 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(111, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 32);
+            this.label2.Size = new System.Drawing.Size(142, 32);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Confirm?";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(81, 676);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 32);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "THANK YOU!";
+            this.label2.Text = "RECEIPT";
             // 
             // flowLayoutCheckOut
             // 
@@ -474,7 +465,7 @@
             this.hopeForm2.Dock = System.Windows.Forms.DockStyle.Top;
             this.hopeForm2.Font = new System.Drawing.Font("Sans Serif Collection", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hopeForm2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
-            this.hopeForm2.Image = ((System.Drawing.Image)(resources.GetObject("hopeForm2.Image")));
+            this.hopeForm2.Image = null;
             this.hopeForm2.ImeMode = System.Windows.Forms.ImeMode.On;
             this.hopeForm2.Location = new System.Drawing.Point(0, 0);
             this.hopeForm2.MaximizeBox = false;
@@ -502,31 +493,33 @@
             // panelhome
             // 
             this.panelhome.BackColor = System.Drawing.Color.Transparent;
+            this.panelhome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelhome.BackgroundImage")));
             this.panelhome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelhome.Controls.Add(this.panel3);
             this.panelhome.Controls.Add(this.button1);
-            this.panelhome.Location = new System.Drawing.Point(244, 46);
+            this.panelhome.Location = new System.Drawing.Point(244, 58);
             this.panelhome.Name = "panelhome";
-            this.panelhome.Size = new System.Drawing.Size(1145, 757);
+            this.panelhome.Size = new System.Drawing.Size(1130, 735);
             this.panelhome.TabIndex = 21;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.IndianRed;
+            this.panel3.AutoSize = true;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(272, 173);
+            this.panel3.Location = new System.Drawing.Point(194, 130);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(541, 129);
+            this.panel3.Size = new System.Drawing.Size(720, 126);
             this.panel3.TabIndex = 19;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Showcard Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.label6.Font = new System.Drawing.Font("Showcard Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Honeydew;
             this.label6.Location = new System.Drawing.Point(20, 37);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(479, 50);
+            this.label6.Size = new System.Drawing.Size(697, 74);
             this.label6.TabIndex = 17;
             this.label6.Text = "Welcome to Shoppix";
             // 
@@ -536,13 +529,43 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(420, 546);
+            this.button1.Location = new System.Drawing.Point(443, 558);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(262, 74);
             this.button1.TabIndex = 18;
             this.button1.Text = "Start Shopping";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // confirmpanel
+            // 
+            this.confirmpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.confirmpanel.Controls.Add(this.label9);
+            this.confirmpanel.Controls.Add(this.label7);
+            this.confirmpanel.Location = new System.Drawing.Point(750, 189);
+            this.confirmpanel.Name = "confirmpanel";
+            this.confirmpanel.Size = new System.Drawing.Size(354, 195);
+            this.confirmpanel.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(107, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(131, 22);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Shoppix Corp";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(40, 81);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(267, 20);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "THANK YOU FOR SHOPPING!";
             // 
             // Form1
             // 
@@ -551,14 +574,14 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1386, 805);
-            this.Controls.Add(this.panelhome);
+            this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelBrowseContainer);
             this.Controls.Add(this.cartpanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.hopeForm2);
-            this.Controls.Add(this.mainpanel);
+            this.Controls.Add(this.panelhome);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -582,8 +605,11 @@
             this.panelcheckout.PerformLayout();
             this.panelBrowseContainer.ResumeLayout(false);
             this.panelhome.ResumeLayout(false);
+            this.panelhome.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.confirmpanel.ResumeLayout(false);
+            this.confirmpanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -614,7 +640,6 @@
         private System.Windows.Forms.Timer timerBrowse;
         public System.Windows.Forms.Label TotalL;
         private System.Windows.Forms.Panel panelcheckout;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label subtotal;
@@ -630,6 +655,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel confirmpanel;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
     }
 }
 

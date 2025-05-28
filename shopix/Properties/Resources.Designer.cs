@@ -63,6 +63,16 @@ namespace shopix.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ai_generated_grocery_store_display_cases_with_products_ai_generated_image_photo {
+            get {
+                object obj = ResourceManager.GetObject("ai-generated-grocery-store-display-cases-with-products-ai-generated-image-photo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap burnice {
             get {
                 object obj = ResourceManager.GetObject("burnice", resourceCulture);

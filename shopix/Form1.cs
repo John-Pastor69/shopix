@@ -22,6 +22,8 @@ namespace shopix
         public Form1()
         {
             InitializeComponent();
+            buttonStart.Hide();
+            confirmpanel.Hide();
         }
 
         #region Inserting data into DB
@@ -225,6 +227,7 @@ namespace shopix
             panel2.Hide();
             panelcheckout.Hide();
             confirmbtn.Hide();
+            buttonStart.Hide();
 
             // Corrected: Use the ChangeButtonColor method from the Form1 class
             ChangeButtonColor(buttonHome, Color.LightBlue);
@@ -249,7 +252,7 @@ namespace shopix
             panel2.Hide();
             panelcheckout.Hide();
             confirmbtn.Hide();
-            buttonStart.Show();
+            confirmpanel.Hide();
 
             ChangeButtonColor(buttonHome, Color.LightBlue);
             ChangeButtonColor(buttonBrowse, SystemColors.Control);
@@ -267,6 +270,7 @@ namespace shopix
             panel2.Hide();
             panelcheckout.Show();
             confirmbtn.Show();
+            confirmpanel.Hide();
 
             ChangeButtonColor(buttonCheckout, Color.LightBlue);
             ChangeButtonColor(buttonHome, SystemColors.Control);
@@ -384,6 +388,10 @@ namespace shopix
             this.confirmbtn.Hide(); // Ensure 'confirmbtn' is a member of the Form1 class  
             flowLayoutPanel2.Controls.Clear();
             TotalL.Hide();
+            panelcheckout.Hide();
+            confirmpanel.Show();
+
+
 
             // Placeholder for showing a new panel for confirmed receipt  
             // panelcheckout2.Show();  
@@ -405,6 +413,7 @@ namespace shopix
         private void buttonStart_Click_1(object sender, EventArgs e)
         {
             buttonBrowse.PerformClick();    
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
